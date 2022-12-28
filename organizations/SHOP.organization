@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="SHOP" description="The SHOP organization represents an example online shop company.">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="carl">
+      <firstName>Carl</firstName>
+      <lastName>Customer</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">123</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="walter">
+      <firstName>Walter</firstName>
+      <lastName>Warehouse</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">123</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="bill">
+      <firstName>Bill</firstName>
+      <lastName>Billing</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">123</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="sue">
+      <firstName>Sue</firstName>
+      <lastName>Shipping</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="Member">
+      <displayName>Member</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="Customer">
+      <displayName>Customer</displayName>
+      <description></description>
+    </group>
+    <group name="Warehouse">
+      <displayName>Warehouse</displayName>
+    </group>
+    <group name="Billing">
+      <displayName>Billing</displayName>
+    </group>
+    <group name="Shipping">
+      <displayName>Shipping</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>carl</userName>
+      <roleName>Member</roleName>
+      <groupName>Customer</groupName>
+    </membership>
+    <membership>
+      <userName>walter</userName>
+      <roleName>Member</roleName>
+      <groupName>Warehouse</groupName>
+    </membership>
+    <membership>
+      <userName>bill</userName>
+      <roleName>Member</roleName>
+      <groupName>Billing</groupName>
+    </membership>
+    <membership>
+      <userName>sue</userName>
+      <roleName>Member</roleName>
+      <groupName>Shipping</groupName>
+    </membership>
+  </memberships>
+</organization:Organization>
