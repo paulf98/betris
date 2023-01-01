@@ -93,6 +93,12 @@
       <artifactId>groovy-servlet</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>com.company.model</groupId>
+      <artifactId>bdm-client</artifactId>
+      <version>1.0.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <pluginManagement>
