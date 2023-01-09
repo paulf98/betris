@@ -11,6 +11,7 @@ The following users are defined:
 - bill: Billing department
 - sue: Shipping department
 - walter: Warehouse department
+- mike: Management department
+- mona: Shop moderation
 
 > **Note:** The passwords for all users are `123`.
-
