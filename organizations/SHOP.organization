@@ -31,7 +31,24 @@
       <lastName>Shipping</lastName>
       <personalData/>
       <professionalData/>
-      <password encrypted="false">bpm</password>
+      <password encrypted="false">123</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="mike">
+      <firstName>Mike</firstName>
+      <lastName>Manager</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">123</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="mona">
+      <firstName>Mona</firstName>
+      <lastName>Moderator</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">123</password>
       <customUserInfoValues/>
     </user>
   </users>
@@ -54,6 +71,12 @@
     <group name="Shipping">
       <displayName>Shipping</displayName>
     </group>
+    <group name="Management">
+      <displayName>Management</displayName>
+    </group>
+    <group name="Moderator">
+      <displayName>Moderator</displayName>
+    </group>
   </groups>
   <memberships>
     <membership>
@@ -75,6 +98,16 @@
       <userName>sue</userName>
       <roleName>Member</roleName>
       <groupName>Shipping</groupName>
+    </membership>
+    <membership>
+      <userName>mike</userName>
+      <roleName>Member</roleName>
+      <groupName>Management</groupName>
+    </membership>
+    <membership>
+      <userName>mona</userName>
+      <roleName>Member</roleName>
+      <groupName>Moderator</groupName>
     </membership>
   </memberships>
 </organization:Organization>
