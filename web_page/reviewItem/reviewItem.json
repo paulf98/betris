@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "ReviewItem",
   "name" : "ReviewItem",
-  "lastUpdate" : 1673270676906,
+  "lastUpdate" : 1673279830215,
   "rows" : [
     [
       {
@@ -48,6 +48,10 @@
                 "dimension" : {
                   "type" : "constant",
                   "value" : 12
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : false
                 }
               },
               "reference" : "fa555b14-0107-4446-8c4a-26aa3752f844",
