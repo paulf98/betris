@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "CreateItem",
   "name" : "CreateItem",
-  "lastUpdate" : 1673263122384,
+  "lastUpdate" : 1673269634896,
   "rows" : [
     [
       {
@@ -639,6 +639,14 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
                   }
                 },
                 "reference" : "d95e146b-bbba-40a7-bc22-8c39efb27c4a",

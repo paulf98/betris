@@ -8,63 +8,54 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_5k8-EIaXEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_5k8-EYaXEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_5k8-EoaXEe2WY_GAK9s2hw" name="Browse Online Catalog" outgoing="_ty_coIjsEe2WY_GAK9s2hw" incoming="_5k8-I4aXEe2WY_GAK9s2hw" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_5k8-EoaXEe2WY_GAK9s2hw" name="Create Order" outgoing="_ty_coIjsEe2WY_GAK9s2hw" incoming="_5k8-I4aXEe2WY_GAK9s2hw" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_5k8-E4aXEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_5k8-FIaXEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_5k8-FYaXEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
-          <operations xmi:type="expression:Operation" xmi:id="_m_254I6oEe2xxdA9tL88Dg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_m_254Y6oEe2xxdA9tL88Dg" name="item" content="item" type="TYPE_VARIABLE" returnType="com.company.model.Item">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_m_3g8I6oEe2xxdA9tL88Dg" name="item" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.Item"/>
+          <operations xmi:type="expression:Operation" xmi:id="_GYdN8JApEe2xxdA9tL88Dg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_GYdN8ZApEe2xxdA9tL88Dg" name="order" content="order" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_GYdN8pApEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_m_3g8Y6oEe2xxdA9tL88Dg" name="itemInput.itemId" content="itemInput?.itemId" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_m_3g8o6oEe2xxdA9tL88Dg" name="itemInput" type="COMPLEX"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_GYdN85ApEe2xxdA9tL88Dg" name="orderInput.orderItems" content="def itemList = []&#xA;//For each item collected in multiple input&#xA;orderInput?.orderItems.each{&#xA;&#x9;//Add Item instance&#xA;&#x9;itemList.add({ currentItemInput ->&#xA;&#x9;&#x9;def itemVar = itemDAO.findByPersistenceId(currentItemInput.persistenceId_string?.trim() ? currentItemInput.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;if(!itemVar) {&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Item` with the persistence id &quot; + currentItemInput.persistenceId_string?.trim() ? currentItemInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return itemVar&#xA;&#x9;}(it))&#xA;}&#xA;return itemList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_GYdN9JApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_GYdN9ZApEe2xxdA9tL88Dg" name="itemDAO" content="itemDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ItemDAO" returnTypeFixed="true"/>
             </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_m_3g846oEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setItemId">
+            <operator xmi:type="expression:Operator" xmi:id="_GYdN9pApEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setOrderItems">
+              <inputTypes>java.util.List</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_GYdN95ApEe2xxdA9tL88Dg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_GYdN-JApEe2xxdA9tL88Dg" name="order" content="order" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_GYdN-ZApEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_GYdN-pApEe2xxdA9tL88Dg" name="orderInput.orderDate" content="orderInput?.orderDate" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.OffsetDateTime">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_GYdN-5ApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_GYdN_JApEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setOrderDate">
+              <inputTypes>java.time.OffsetDateTime</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_GYdN_ZApEe2xxdA9tL88Dg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_GYdN_pApEe2xxdA9tL88Dg" name="order" content="order" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_GYdN_5ApEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_GYdOAJApEe2xxdA9tL88Dg" name="orderInput.orderStatus" content="orderInput?.orderStatus" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_GYdOAZApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_GYdOApApEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setOrderStatus">
               <inputTypes>java.lang.String</inputTypes>
             </operator>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_m_4IAI6oEe2xxdA9tL88Dg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_m_4IAY6oEe2xxdA9tL88Dg" name="item" content="item" type="TYPE_VARIABLE" returnType="com.company.model.Item">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_m_4IAo6oEe2xxdA9tL88Dg" name="item" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.Item"/>
+          <operations xmi:type="expression:Operation" xmi:id="_GYdOA5ApEe2xxdA9tL88Dg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_GYdOBJApEe2xxdA9tL88Dg" name="order" content="order" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_GYdOBZApEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_m_4IA46oEe2xxdA9tL88Dg" name="itemInput.itemName" content="itemInput?.itemName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_m_4IBI6oEe2xxdA9tL88Dg" name="itemInput" type="COMPLEX"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_GYdOBpApEe2xxdA9tL88Dg" name="orderInput.orderCustomer" content="//Retrieve aggregated Customer using its DAO and persistenceId&#xA;def customerVar = customerDAO.findByPersistenceId(orderInput?.orderCustomer?.persistenceId_string?.trim() ? orderInput.orderCustomer.persistenceId_string.toLong() : null)&#xA;if (!customerVar) {&#xA;&#x9;if (orderInput?.orderCustomer?.persistenceId_string?.trim() ? orderInput.orderCustomer.persistenceId_string.toLong() : null) {&#xA;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Customer` with the persistence id &quot; + orderInput?.orderCustomer?.persistenceId_string?.trim() ? orderInput.orderCustomer.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;}&#xA;&#x9;return null&#xA;}&#xA;return customerVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_GYdOB5ApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_GYdOCJApEe2xxdA9tL88Dg" name="customerDAO" content="customerDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.CustomerDAO" returnTypeFixed="true"/>
             </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_m_4IBY6oEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setItemName">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_m_4IBo6oEe2xxdA9tL88Dg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_m_4IB46oEe2xxdA9tL88Dg" name="item" content="item" type="TYPE_VARIABLE" returnType="com.company.model.Item">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_m_4ICI6oEe2xxdA9tL88Dg" name="item" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.Item"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_m_4ICY6oEe2xxdA9tL88Dg" name="itemInput.itemDescription" content="itemInput?.itemDescription" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_m_4ICo6oEe2xxdA9tL88Dg" name="itemInput" type="COMPLEX"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_m_4IC46oEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setItemDescription">
-              <inputTypes>java.lang.String</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_m_4IDI6oEe2xxdA9tL88Dg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_m_4IDY6oEe2xxdA9tL88Dg" name="item" content="item" type="TYPE_VARIABLE" returnType="com.company.model.Item">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_m_4IDo6oEe2xxdA9tL88Dg" name="item" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.Item"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_m_4ID46oEe2xxdA9tL88Dg" name="itemInput.itemAmount" content="itemInput?.itemAmount" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_m_4IEI6oEe2xxdA9tL88Dg" name="itemInput" type="COMPLEX"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_m_4IEY6oEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setItemAmount">
-              <inputTypes>java.lang.Integer</inputTypes>
-            </operator>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_m_4IEo6oEe2xxdA9tL88Dg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_m_4IE46oEe2xxdA9tL88Dg" name="item" content="item" type="TYPE_VARIABLE" returnType="com.company.model.Item">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_m_4IFI6oEe2xxdA9tL88Dg" name="item" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.Item"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_m_4IFY6oEe2xxdA9tL88Dg" name="itemInput.itemAvailability" content="itemInput?.itemAvailability" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_m_4IFo6oEe2xxdA9tL88Dg" name="itemInput" type="COMPLEX"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_m_4IF46oEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setItemAvailability">
-              <inputTypes>java.lang.String</inputTypes>
+            <operator xmi:type="expression:Operator" xmi:id="_GYdOCZApEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setOrderCustomer">
+              <inputTypes>com.company.model.Customer</inputTypes>
             </operator>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_5k8-FoaXEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -73,32 +64,104 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_5k8-GYaXEe2WY_GAK9s2hw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_5k8-GoaXEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_5k8-G4aXEe2WY_GAK9s2hw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_5k8-HIaXEe2WY_GAK9s2hw" name="OnlineShop" content="ce6493d4-61ad-4cd6-8b01-1f6bafe8d684" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_IGh5UJApEe2xxdA9tL88Dg" name="CreateOrder" content="4d11ecc9-7e33-4cc1-a3a7-7f083cd398ce" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_5k8-HYaXEe2WY_GAK9s2hw">
-            <inputs xmi:type="process:ContractInput" xmi:id="_m_jX4I6oEe2xxdA9tL88Dg" name="itemInput" type="COMPLEX" dataReference="item">
-              <inputs xmi:type="process:ContractInput" xmi:id="_m_mbMI6oEe2xxdA9tL88Dg" name="itemId"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_m_mbMY6oEe2xxdA9tL88Dg" name="itemName"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_m_mbMo6oEe2xxdA9tL88Dg" name="itemDescription"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_m_mbM46oEe2xxdA9tL88Dg" name="itemAmount" type="INTEGER"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_m_mbNI6oEe2xxdA9tL88Dg" name="itemAvailability"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_GYQZoJApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX" dataReference="order">
+              <inputs xmi:type="process:ContractInput" xmi:id="_GYS14JApEe2xxdA9tL88Dg" name="orderItems" type="COMPLEX" multiple="true">
+                <inputs xmi:type="process:ContractInput" xmi:id="_GYS14ZApEe2xxdA9tL88Dg" name="persistenceId_string"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_GYS14pApEe2xxdA9tL88Dg" name="orderDate" type="OFFSETDATETIME"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_GYS145ApEe2xxdA9tL88Dg" name="orderStatus"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_GYS15JApEe2xxdA9tL88Dg" name="orderCustomer" type="COMPLEX">
+                <inputs xmi:type="process:ContractInput" xmi:id="_GYS15ZApEe2xxdA9tL88Dg" name="persistenceId_string"/>
+              </inputs>
             </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_GYcm4JApEe2xxdA9tL88Dg" expression="!orderInput?.orderItems || orderInput?.orderItems?.persistenceId_string" errorMessage="Item must reference an existing instance with a persistenceId for OrderItems" name="aggregation_orderInput_orderItems">
+              <inputNames>orderInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_GYcm4ZApEe2xxdA9tL88Dg" expression="!orderInput?.orderCustomer || orderInput?.orderCustomer?.persistenceId_string" errorMessage="Customer must reference an existing instance with a persistenceId for OrderItems" name="aggregation_orderInput_orderCustomer">
+              <inputNames>orderInput</inputNames>
+            </constraints>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_5k8-HoaXEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_oJCxkIjsEe2WY_GAK9s2hw" name="Review selected Products" outgoing="_DLPWEI6fEe2xxdA9tL88Dg" incoming="_ty_coIjsEe2WY_GAK9s2hw" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_oJCxkIjsEe2WY_GAK9s2hw" name="Review Order" outgoing="_DLPWEI6fEe2xxdA9tL88Dg" incoming="_ty_coIjsEe2WY_GAK9s2hw" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_oJGb8IjsEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_oJF04IjsEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_oJGb8YjsEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_gHU_4JApEe2xxdA9tL88Dg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_gHVm8JApEe2xxdA9tL88Dg" name="order" content="order" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_gHVm8ZApEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_gHVm8pApEe2xxdA9tL88Dg" name="orderInput.orderItems" content="def itemList = []&#xA;//For each item collected in multiple input&#xA;orderInput?.orderItems.each{&#xA;&#x9;//Add Item instance&#xA;&#x9;itemList.add({ currentItemInput ->&#xA;&#x9;&#x9;def itemVar = itemDAO.findByPersistenceId(currentItemInput.persistenceId_string?.trim() ? currentItemInput.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;if(!itemVar) {&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Item` with the persistence id &quot; + currentItemInput.persistenceId_string?.trim() ? currentItemInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return itemVar&#xA;&#x9;}(it))&#xA;}&#xA;return itemList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_gHVm85ApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_gHVm9JApEe2xxdA9tL88Dg" name="itemDAO" content="itemDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ItemDAO" returnTypeFixed="true"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_gHVm9ZApEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setOrderItems">
+              <inputTypes>java.util.List</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_gHVm9pApEe2xxdA9tL88Dg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_gHVm95ApEe2xxdA9tL88Dg" name="order" content="order" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_gHVm-JApEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_gHVm-ZApEe2xxdA9tL88Dg" name="orderInput.orderDate" content="orderInput?.orderDate" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.OffsetDateTime">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_gHVm-pApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_gHVm-5ApEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setOrderDate">
+              <inputTypes>java.time.OffsetDateTime</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_gHVm_JApEe2xxdA9tL88Dg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_gHVm_ZApEe2xxdA9tL88Dg" name="order" content="order" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_gHVm_pApEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_gHVm_5ApEe2xxdA9tL88Dg" name="orderInput.orderStatus" content="orderInput?.orderStatus" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_gHVnAJApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_gHVnAZApEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setOrderStatus">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_gHVnApApEe2xxdA9tL88Dg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_gHVnA5ApEe2xxdA9tL88Dg" name="order" content="order" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_gHVnBJApEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_gHVnBZApEe2xxdA9tL88Dg" name="orderInput.orderCustomer" content="//Retrieve aggregated Customer using its DAO and persistenceId&#xA;def customerVar = customerDAO.findByPersistenceId(orderInput?.orderCustomer?.persistenceId_string?.trim() ? orderInput.orderCustomer.persistenceId_string.toLong() : null)&#xA;if (!customerVar) {&#xA;&#x9;if (orderInput?.orderCustomer?.persistenceId_string?.trim() ? orderInput.orderCustomer.persistenceId_string.toLong() : null) {&#xA;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Customer` with the persistence id &quot; + orderInput?.orderCustomer?.persistenceId_string?.trim() ? orderInput.orderCustomer.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;}&#xA;&#x9;return null&#xA;}&#xA;return customerVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_gHVnBpApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_gHVnB5ApEe2xxdA9tL88Dg" name="customerDAO" content="customerDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.CustomerDAO" returnTypeFixed="true"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_gHVnCJApEe2xxdA9tL88Dg" type="JAVA_METHOD" expression="setOrderCustomer">
+              <inputTypes>com.company.model.Customer</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_oJGb8ojsEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_oJGb84jsEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_oJGb9IjsEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_oJGb9ojsEe2WY_GAK9s2hw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_oJGb9YjsEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_oJGb-IjsEe2WY_GAK9s2hw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_T6yi8I6nEe2xxdA9tL88Dg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_hgYdgJApEe2xxdA9tL88Dg" name="ReviewOrder" content="73d15c70-e067-4736-9ce4-f5c44f38bd61" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_oJGb94jsEe2WY_GAK9s2hw"/>
+          <contract xmi:type="process:Contract" xmi:id="_oJGb94jsEe2WY_GAK9s2hw">
+            <inputs xmi:type="process:ContractInput" xmi:id="_gHKn0JApEe2xxdA9tL88Dg" name="orderInput" type="COMPLEX" dataReference="order" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_gHMdAJApEe2xxdA9tL88Dg" name="orderItems" type="COMPLEX" multiple="true" createMode="false">
+                <inputs xmi:type="process:ContractInput" xmi:id="_gHMdAZApEe2xxdA9tL88Dg" name="persistenceId_string" createMode="false"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_gHMdApApEe2xxdA9tL88Dg" name="orderDate" type="OFFSETDATETIME" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_gHMdA5ApEe2xxdA9tL88Dg" name="orderStatus" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_gHMdBJApEe2xxdA9tL88Dg" name="orderCustomer" type="COMPLEX" createMode="false">
+                <inputs xmi:type="process:ContractInput" xmi:id="_gHMdBZApEe2xxdA9tL88Dg" name="persistenceId_string" createMode="false"/>
+              </inputs>
+            </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_gHUY0JApEe2xxdA9tL88Dg" expression="!orderInput?.orderItems || orderInput?.orderItems?.persistenceId_string" errorMessage="Item must reference an existing instance with a persistenceId for OrderItems" name="aggregation_orderInput_orderItems">
+              <inputNames>orderInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_gHUY0ZApEe2xxdA9tL88Dg" expression="!orderInput?.orderCustomer || orderInput?.orderCustomer?.persistenceId_string" errorMessage="Customer must reference an existing instance with a persistenceId for OrderItems" name="aggregation_orderInput_orderCustomer">
+              <inputNames>orderInput</inputNames>
+            </constraints>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_oJJfQIjsEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:EndEvent" xmi:id="_Byc-MI6fEe2xxdA9tL88Dg" name="End" incoming="_DLPWEI6fEe2xxdA9tL88Dg">
@@ -111,10 +174,13 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_D0YWkIj1Ee2WY_GAK9s2hw" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <data xmi:type="process:BusinessObjectData" xmi:id="_hhOdEI6fEe2xxdA9tL88Dg" name="customer" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.Customer">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_hhPrMI6fEe2xxdA9tL88Dg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_A8yE4JAoEe2xxdA9tL88Dg" name="initCustomer()" content="def customerVar = new com.company.model.Customer()&#xA;customerVar.customerName =      ?.customerName&#xA;customerVar.customerAddress =      ?.customerAddress&#xA;return customerVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer"/>
+      </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_mqUXUJAfEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_mqU-YJAfEe2xxdA9tL88Dg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_5k8-H4aXEe2WY_GAK9s2hw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_T6yi8Y6nEe2xxdA9tL88Dg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_BxuI0JAoEe2xxdA9tL88Dg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_5k8-IYaXEe2WY_GAK9s2hw">
         <targetForm xmi:type="expression:Expression" xmi:id="_5k8-IoaXEe2WY_GAK9s2hw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -131,7 +197,6 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_DLSZYI6fEe2xxdA9tL88Dg"/>
         <condition xmi:type="expression:Expression" xmi:id="_DLTAcI6fEe2xxdA9tL88Dg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <actors xmi:type="process:Actor" xmi:id="_5k8-JoaXEe2WY_GAK9s2hw" documentation="This is an example of actor that is mapped to any ACME users" name="Employee actor"/>
       <actors xmi:type="process:Actor" xmi:id="_ycU_QIjsEe2WY_GAK9s2hw" name="carl" initiator="true"/>
       <contract xmi:type="process:Contract" xmi:id="_5k8-J4aXEe2WY_GAK9s2hw"/>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_5k8-KIaXEe2WY_GAK9s2hw">
