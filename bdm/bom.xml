@@ -3,9 +3,8 @@
     <businessObjects>
         <businessObject qualifiedName="com.company.model.Customer">
             <fields>
-                <field type="STRING" length="255" name="customerId" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="customerName" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.OrderItems" fetchType="LAZY" name="customerOrders" nullable="true" collection="true"/>
+                <field type="STRING" length="255" name="customerAddress" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -27,10 +26,10 @@
         <businessObject qualifiedName="com.company.model.OrderItems">
             <description>Reflects an order.</description>
             <fields>
-                <field type="STRING" length="255" name="orderId" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.Item" fetchType="LAZY" name="orderItems" nullable="true" collection="true"/>
                 <field type="OFFSETDATETIME" length="255" name="orderDate" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="orderStatus" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Customer" fetchType="LAZY" name="orderCustomer" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
