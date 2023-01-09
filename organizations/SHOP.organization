@@ -51,6 +51,14 @@
       <password encrypted="false">123</password>
       <customUserInfoValues/>
     </user>
+    <user userName="admin">
+      <firstName>Adam</firstName>
+      <lastName>Administrator</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles>
     <role name="Member">
@@ -106,6 +114,36 @@
     </membership>
     <membership>
       <userName>mona</userName>
+      <roleName>Member</roleName>
+      <groupName>Moderator</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Member</roleName>
+      <groupName>Warehouse</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Member</roleName>
+      <groupName>Customer</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Member</roleName>
+      <groupName>Billing</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Member</roleName>
+      <groupName>Shipping</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Member</roleName>
+      <groupName>Management</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
       <roleName>Member</roleName>
       <groupName>Moderator</groupName>
     </membership>

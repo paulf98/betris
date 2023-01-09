@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "CreateOrder",
   "name" : "CreateOrder",
-  "lastUpdate" : 1673277767292,
+  "lastUpdate" : 1673285052900,
   "rows" : [
     [
       {
@@ -680,7 +680,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "formInput.orderInput.orderCustomer"
+                          "value" : ""
                         },
                         "required" : {
                           "type" : "constant",
@@ -695,8 +695,8 @@
                           "value" : false
                         },
                         "displayedKey" : {
-                          "type" : "constant",
-                          "value" : "customerName"
+                          "type" : "expression",
+                          "value" : "customerFirstName"
                         },
                         "returnedKey" : {
                           "type" : "constant"
