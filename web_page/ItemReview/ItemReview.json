@@ -1,8 +1,8 @@
 {
   "modelVersion" : "2.3",
-  "id" : "ReviewItem",
-  "name" : "ReviewItem",
-  "lastUpdate" : 1673279830215,
+  "id" : "ItemReview",
+  "name" : "ItemReview",
+  "lastUpdate" : 1673280308636,
   "rows" : [
     [
       {
@@ -11,7 +11,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "d60d7a5f-c540-4e27-af6a-b2be9c675cfc",
+        "reference" : "ca0ebc59-b5d2-4b12-b2c8-d00f704e4fe4",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -48,13 +48,9 @@
                 "dimension" : {
                   "type" : "constant",
                   "value" : 12
-                },
-                "allowHTML" : {
-                  "type" : "constant",
-                  "value" : false
                 }
               },
-              "reference" : "fa555b14-0107-4446-8c4a-26aa3752f844",
+              "reference" : "e6db7457-2fba-4e13-8d67-1ec8ad8aebda",
               "hasValidationError" : false,
               "id" : "pbTitle",
               "description" : ""
@@ -100,21 +96,9 @@
                 "dimension" : {
                   "type" : "constant",
                   "value" : 12
-                },
-                "allowHTML" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "labelPosition" : {
-                  "type" : "constant",
-                  "value" : "top"
-                },
-                "labelWidth" : {
-                  "type" : "constant",
-                  "value" : 4
                 }
               },
-              "reference" : "33c53092-7301-42e0-87a5-d526f41ae341",
+              "reference" : "48682521-44af-4b4d-b252-4fcf8e69e1b4",
               "hasValidationError" : false,
               "id" : "pbText",
               "description" : ""
@@ -129,17 +113,8 @@
         "dimension" : {
           "xs" : 12
         },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          }
-        },
-        "reference" : "a79583c8-97a3-4e9f-b211-d522667e947c",
+        "propertyValues" : { },
+        "reference" : "abda1e97-0a46-46e0-ab01-697b08bf3048",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -148,7 +123,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "c40e277f-680d-4624-833b-941a6c9c6d90",
+          "reference" : "c5f0fef1-de1b-47d3-9630-c40f444ef09a",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -187,7 +162,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "784bdf4e-7911-4d31-9ad1-ec3643ef42b5",
+                "reference" : "82a2244d-c33e-4800-9eb7-e54c6257373e",
                 "hasValidationError" : false,
                 "id" : "pbTitle",
                 "description" : ""
@@ -219,7 +194,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "4fcf8028-7b69-44f6-ab2e-b2f58553a2b4",
+                "reference" : "8d2d3c1e-d7ae-4e6e-8b63-77658f6d34af",
                 "hasValidationError" : false,
                 "id" : "pbContainer",
                 "rows" : [
@@ -281,7 +256,7 @@
                           "value" : true
                         }
                       },
-                      "reference" : "85ea7b5e-0235-49b1-bcec-15493612c00b",
+                      "reference" : "73d4ca29-0b56-4574-8ffc-7cc10be44d53",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -345,7 +320,7 @@
                           "value" : false
                         }
                       },
-                      "reference" : "55aabfef-a6b2-4912-b01f-b5a5f82942f2",
+                      "reference" : "6de66f27-5d69-48a9-9a2a-61afeabfcafd",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -409,7 +384,7 @@
                           "value" : true
                         }
                       },
-                      "reference" : "82b61b2b-7f9c-4703-8e87-55def8ef5526",
+                      "reference" : "6ab22aaa-b428-45f8-8bfe-6ab7a2d63da7",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -473,7 +448,7 @@
                           "value" : false
                         }
                       },
-                      "reference" : "81709033-c3bf-4b39-a2ab-49ee441f3d76",
+                      "reference" : "6ab00938-c6cd-4ada-8c50-9a7923205741",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -518,7 +493,7 @@
                           "value" : "item.itemAvailability"
                         }
                       },
-                      "reference" : "3c68eb8a-0969-4228-aa23-2a5d14846b9d",
+                      "reference" : "0698ebd1-b33f-4653-84aa-1540ec366628",
                       "hasValidationError" : false,
                       "id" : "pbCheckbox",
                       "description" : ""
@@ -563,7 +538,7 @@
                           "value" : "item.itemReviewed"
                         }
                       },
-                      "reference" : "3246fdce-75fd-46ab-97aa-e705db0f43e9",
+                      "reference" : "03a80a2b-ccc4-413c-b27e-28a5e7a628d1",
                       "hasValidationError" : false,
                       "id" : "pbCheckbox",
                       "description" : ""
@@ -645,30 +620,9 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
-                  },
-                  "assign" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "url" : {
-                    "type" : "interpolation"
-                  },
-                  "responseStatusCode" : {
-                    "type" : "variable"
-                  },
-                  "dataFromSuccess" : {
-                    "type" : "variable"
-                  },
-                  "closeOnSuccess" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "modalId" : {
-                    "type" : "constant",
-                    "value" : ""
                   }
                 },
-                "reference" : "07b28bfb-77e0-42f0-9d7e-d0f3a9bb051f",
+                "reference" : "23e8655f-9fe5-42ed-badd-b715aa7c2af0",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -720,7 +674,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "181517c7-f937-41ee-9c45-f0554030e817",
+                "reference" : "9c3e5ebf-b408-4cb1-b02b-e8aee4eec699",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -733,16 +687,16 @@
   ],
   "assets" : [
     {
-      "id" : "4a573a1e-6808-4592-b4c3-9438d5269d60",
-      "name" : "localization.json",
-      "type" : "json",
+      "id" : "08d6857e-f33d-4574-a28b-a3b65efd6aa6",
+      "name" : "style.css",
+      "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "1d36b4e9-aef2-450b-9e45-57d164bfa629",
-      "name" : "style.css",
-      "type" : "css",
+      "id" : "eb441d24-00bb-4b0a-84f1-29ef338d3f53",
+      "name" : "localization.json",
+      "type" : "json",
       "order" : 0,
       "external" : false
     }
@@ -813,7 +767,7 @@
     }
   },
   "hasValidationError" : false,
-  "uuid" : "c2941931-8398-4203-94ff-52e3a796206c",
+  "uuid" : "974709cb-ccbe-4fd9-ab1b-39d5020241df",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }
