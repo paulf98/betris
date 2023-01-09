@@ -173,14 +173,14 @@
       <data xmi:type="process:BusinessObjectData" xmi:id="_D0XIcIj1Ee2WY_GAK9s2hw" name="item" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.Item">
         <defaultValue xmi:type="expression:Expression" xmi:id="_D0YWkIj1Ee2WY_GAK9s2hw" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
-      <data xmi:type="process:BusinessObjectData" xmi:id="_hhOdEI6fEe2xxdA9tL88Dg" name="customer" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.Customer">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_A8yE4JAoEe2xxdA9tL88Dg" name="initCustomer()" content="def customerVar = new com.company.model.Customer()&#xA;customerVar.customerName =      ?.customerName&#xA;customerVar.customerAddress =      ?.customerAddress&#xA;return customerVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer"/>
-      </data>
       <data xmi:type="process:BusinessObjectData" xmi:id="_mqUXUJAfEe2xxdA9tL88Dg" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems">
         <defaultValue xmi:type="expression:Expression" xmi:id="_mqU-YJAfEe2xxdA9tL88Dg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_PiASwJAxEe2xxdA9tL88Dg" name="customer" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.Customer">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_PiA50JAxEe2xxdA9tL88Dg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_5k8-H4aXEe2WY_GAK9s2hw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_BxuI0JAoEe2xxdA9tL88Dg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_GD6AoJAxEe2xxdA9tL88Dg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_5k8-IYaXEe2WY_GAK9s2hw">
         <targetForm xmi:type="expression:Expression" xmi:id="_5k8-IoaXEe2WY_GAK9s2hw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
