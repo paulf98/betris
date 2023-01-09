@@ -13,11 +13,12 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.Item">
             <fields>
-                <field type="STRING" length="255" name="itemId" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="itemName" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="itemName" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="itemDescription" nullable="true" collection="false"/>
+                <field type="FLOAT" length="255" name="itemPrice" nullable="false" collection="false"/>
                 <field type="INTEGER" length="255" name="itemAmount" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="itemAvailability" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="itemAvailability" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="itemReviewed" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
