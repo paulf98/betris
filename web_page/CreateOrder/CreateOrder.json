@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "CreateOrder",
   "name" : "CreateOrder",
-  "lastUpdate" : 1673285052900,
+  "lastUpdate" : 1673361270703,
   "rows" : [
     [
       {
@@ -11,7 +11,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "1a02c2a2-02da-4c4e-8f25-f2f5e8335480",
+        "reference" : "f9dd6354-246d-472e-af00-0af5c9864c55",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -50,7 +50,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "c126f373-8e52-44b4-a30d-3cefbc594af9",
+              "reference" : "b4854cbd-c9fe-4f58-895e-c032c9375f0d",
               "hasValidationError" : false,
               "id" : "pbTitle",
               "description" : ""
@@ -98,7 +98,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "2c3d2712-1a38-46da-a870-50a6b3bf6b64",
+              "reference" : "fa205a78-7dfa-459f-b1da-c8be3425f0b0",
               "hasValidationError" : false,
               "id" : "pbText",
               "description" : ""
@@ -114,7 +114,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "8886eb1c-ff2b-4072-b3ef-e2be939a68f1",
+        "reference" : "b51c2447-2083-4a36-b0e4-3c7de4339135",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -123,7 +123,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "58a9167c-d6ff-483e-a577-4b5c9dc6c0b3",
+          "reference" : "97f6cc7f-59d9-42b6-8016-57e66068f88d",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -162,7 +162,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "5a6a9b4e-e61a-40a5-91b0-d9d02c09fe3b",
+                "reference" : "e1d4ac7a-9ece-475e-b039-b276475b5b87",
                 "hasValidationError" : false,
                 "id" : "pbTitle",
                 "description" : ""
@@ -194,7 +194,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "5473716b-2796-4cb4-8f54-20d0329337e4",
+                "reference" : "4fc5aa4b-1488-4903-9836-7ad6c8946041",
                 "hasValidationError" : false,
                 "id" : "pbContainer",
                 "rows" : [
@@ -233,7 +233,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "3c5661e7-5142-4def-a606-5468fc07e21b",
+                      "reference" : "6370ece5-3dd7-4537-bcf9-ee13b9c5c90a",
                       "hasValidationError" : false,
                       "id" : "pbTitle",
                       "description" : ""
@@ -266,7 +266,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "1eb42984-11a0-45c9-a913-9e03e2d4ec4a",
+                      "reference" : "100fc896-fd8e-478c-b23b-3aca07be22b1",
                       "hasValidationError" : false,
                       "id" : "pbContainer",
                       "rows" : [
@@ -340,7 +340,7 @@
                                 "type" : "constant"
                               }
                             },
-                            "reference" : "35e6ee40-5b71-4511-99ab-4c5e83211be0",
+                            "reference" : "24e78678-5b1b-4ed8-adc7-868be238f5e6",
                             "hasValidationError" : false,
                             "id" : "pbSelect",
                             "description" : ""
@@ -418,7 +418,7 @@
                                 "value" : 12
                               }
                             },
-                            "reference" : "c5939faf-ad65-4b83-b1d3-bf93a3a49e98",
+                            "reference" : "f96614bf-75c2-4541-9811-bb112e6182e7",
                             "hasValidationError" : false,
                             "id" : "pbButton",
                             "description" : ""
@@ -496,139 +496,11 @@
                         "dimension" : {
                           "type" : "constant",
                           "value" : 12
-                        },
-                        "assign" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "url" : {
-                          "type" : "interpolation"
-                        },
-                        "responseStatusCode" : {
-                          "type" : "variable"
-                        },
-                        "dataFromSuccess" : {
-                          "type" : "variable"
-                        },
-                        "closeOnSuccess" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "dataFromError" : {
-                          "type" : "variable"
-                        },
-                        "modalId" : {
-                          "type" : "constant",
-                          "value" : ""
                         }
                       },
-                      "reference" : "b5ac22e7-9bc5-4909-9db8-162e94b9a06f",
+                      "reference" : "6d303cfb-2abf-46bf-8419-e04efdfb6069",
                       "hasValidationError" : false,
                       "id" : "pbButton",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "showNow" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "inlineInput" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "dateFormat" : {
-                          "type" : "constant",
-                          "value" : "MM/dd/yyyy"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Order Date"
-                        },
-                        "type" : {
-                          "type" : "constant"
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "todayLabel" : {
-                          "type" : "constant",
-                          "value" : "Today"
-                        },
-                        "timePlaceholder" : {
-                          "type" : "constant",
-                          "value" : "Enter a time (h:mm:ss a)"
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "showToday" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "timeFormat" : {
-                          "type" : "constant",
-                          "value" : "h:mm:ss a"
-                        },
-                        "placeholder" : {
-                          "type" : "constant",
-                          "value" : "Enter a date (mm/dd/yyyy)"
-                        },
-                        "nowLabel" : {
-                          "type" : "constant",
-                          "value" : "Now"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "formInput.orderInput.orderDate"
-                        },
-                        "withTimeZone" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "allowHTML" : {
-                          "type" : "constant",
-                          "value" : false
-                        }
-                      },
-                      "reference" : "0370c406-2770-4e59-a673-5664c56dfca5",
-                      "hasValidationError" : false,
-                      "id" : "pbDateTimePicker",
                       "description" : ""
                     }
                   ],
@@ -680,7 +552,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : ""
+                          "value" : "formInput.orderInput.orderCustomer"
                         },
                         "required" : {
                           "type" : "constant",
@@ -695,14 +567,14 @@
                           "value" : false
                         },
                         "displayedKey" : {
-                          "type" : "expression",
+                          "type" : "constant",
                           "value" : "customerFirstName"
                         },
                         "returnedKey" : {
                           "type" : "constant"
                         }
                       },
-                      "reference" : "54d8f728-cf87-4fff-b695-e18ddef91643",
+                      "reference" : "d67fa7c9-129e-4ce0-a3bc-41777be30d6d",
                       "hasValidationError" : false,
                       "id" : "pbSelect",
                       "description" : ""
@@ -786,7 +658,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "692e310a-4af3-4150-bceb-c35692517fef",
+                "reference" : "74dd08cf-9f7d-468a-9055-a6a524cdb41b",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -838,7 +710,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "f14de3a1-0b68-451c-a6a3-1000f60eaba5",
+                "reference" : "faaab427-68aa-496f-9a3a-a368ae562e5d",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -851,14 +723,14 @@
   ],
   "assets" : [
     {
-      "id" : "1632242c-d565-4fa1-8485-080d8643ac0c",
+      "id" : "3f598521-f57b-4a86-8dfe-26bfe0fcc359",
       "name" : "style.css",
       "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "185c1a79-57a0-4e07-8df1-0e630389dc5b",
+      "id" : "73a8b454-d934-4355-9824-206c399ae1ef",
       "name" : "localization.json",
       "type" : "json",
       "order" : 0,
@@ -880,7 +752,7 @@
         "{",
         "  \"orderInput\" : {",
         "    \"orderItems\" : [ ],",
-        "    \"orderDate\" : null,",
+        "    \"orderDate\" : \"\",",
         "    \"orderStatus\" : \"DRAFT\",",
         "    \"orderCustomer\" : {",
         "      \"persistenceId_string\" : \"\"",
@@ -909,7 +781,10 @@
       "type" : "expression",
       "value" : [
         "return {",
-        "\torderInput: $data.formInput.orderInput",
+        "\torderInput: {",
+        "\t    ...$data.formInput.orderInput,",
+        "\t    orderDate: new Date().toISOString(),",
+        "\t}",
         "}"
       ],
       "exposed" : false
@@ -944,7 +819,7 @@
     }
   },
   "hasValidationError" : false,
-  "uuid" : "4d11ecc9-7e33-4cc1-a3a7-7f083cd398ce",
+  "uuid" : "49411fb8-ced7-498d-af8b-570ce3df7396",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }
