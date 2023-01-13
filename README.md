@@ -13,5 +13,6 @@ The following users are defined:
 - walter: Warehouse department
 - mike: Management department
 - mona: Shop moderation
+- sophie: Shopping department
 
 > **Note:** The passwords for all users are `123`.

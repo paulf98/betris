@@ -59,6 +59,14 @@
       <password encrypted="false">bpm</password>
       <customUserInfoValues/>
     </user>
+    <user userName="sophie">
+      <firstName>Sophie</firstName>
+      <lastName>Shopping</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">123</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles>
     <role name="Member">
@@ -84,6 +92,9 @@
     </group>
     <group name="Moderator">
       <displayName>Moderator</displayName>
+    </group>
+    <group name="Shopping">
+      <displayName>Shopping</displayName>
     </group>
   </groups>
   <memberships>
@@ -146,6 +157,16 @@
       <userName>admin</userName>
       <roleName>Member</roleName>
       <groupName>Moderator</groupName>
+    </membership>
+    <membership>
+      <userName>sophie</userName>
+      <roleName>Member</roleName>
+      <groupName>Shopping</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Member</roleName>
+      <groupName>Shopping</groupName>
     </membership>
   </memberships>
 </organization:Organization>
