@@ -1,8 +1,8 @@
 {
   "modelVersion" : "2.3",
-  "id" : "CreateCustomer",
-  "name" : "CreateCustomer",
-  "lastUpdate" : 1673774375202,
+  "id" : "CreateItem2",
+  "name" : "CreateItem2",
+  "lastUpdate" : 1673775331656,
   "rows" : [
     [
       {
@@ -11,7 +11,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "516ad970-68c5-4d8c-b757-5bd13ec6d85a",
+        "reference" : "52284995-da3e-4462-a96c-ade39c8b6719",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -20,7 +20,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "023113d8-d95f-4f9b-af47-d686e9bce355",
+          "reference" : "4b7a9308-ad1a-4610-a019-7389081d06f6",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -48,7 +48,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Customer"
+                    "value" : "Item"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -59,7 +59,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "91d859f3-de32-4ecc-8e9b-bacfb470d586",
+                "reference" : "1366811d-7126-4214-a76a-2a0a291918ef",
                 "hasValidationError" : false,
                 "id" : "pbTitle",
                 "description" : ""
@@ -91,7 +91,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "ccc7ff23-465f-4934-bbd0-a9343bf0b03d",
+                "reference" : "9c368b38-9a8d-4aaf-a8b3-f22378b1f20d",
                 "hasValidationError" : false,
                 "id" : "pbContainer",
                 "rows" : [
@@ -131,7 +131,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Customer Name"
+                          "value" : "Item Name"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -146,14 +146,14 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "formInput.customerInput.customerName"
+                          "value" : "formInput.itemInput.itemName"
                         },
                         "required" : {
                           "type" : "constant",
                           "value" : true
                         }
                       },
-                      "reference" : "3bdbea7a-b4df-4858-9769-c4961008fbd4",
+                      "reference" : "c4c22585-2af9-4ebc-a610-f3b8db7e2aa7",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -195,7 +195,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Customer Country"
+                          "value" : "Item Description"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -210,14 +210,14 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "formInput.customerInput.customerCountry"
+                          "value" : "formInput.itemInput.itemDescription"
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : true
+                          "value" : false
                         }
                       },
-                      "reference" : "ef903c24-992d-4a93-bba5-29d56d8a23e6",
+                      "reference" : "5722ad3e-ebb3-424f-bc31-4d0f1010b31e",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -227,198 +227,54 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
+                        "xs" : 6,
                         "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Customer Postal Code"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "number"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "formInput.customerInput.customerPostalCode"
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : true
-                        }
-                      },
-                      "reference" : "b5a4da16-af08-4f65-b519-0697c2328ea7",
-                      "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Customer City"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "text"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "formInput.customerInput.customerCity"
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : true
-                        }
-                      },
-                      "reference" : "9fcf45cd-ead9-418f-bfdb-25b657319489",
-                      "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 10,
-                        "sm" : 10,
-                        "xs" : 10,
+                        "md" : 6,
                         "lg" : 6
                       },
                       "propertyValues" : {
-                        "labelHidden" : {
+                        "cssClasses" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : ""
                         },
                         "hidden" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "labelPosition" : {
+                        "required" : {
                           "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
+                          "value" : true
                         },
                         "readOnly" : {
                           "type" : "constant",
                           "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Customer Street"
-                        },
-                        "placeholder" : {
-                          "type" : "constant"
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "text"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "formInput.customerInput.customerStreet"
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : true
                         },
                         "allowHTML" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "minLength" : {
+                        "labelHidden" : {
                           "type" : "constant",
-                          "value" : ""
+                          "value" : false
                         },
-                        "maxLength" : {
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Item Price"
+                        },
+                        "labelPosition" : {
                           "type" : "constant",
-                          "value" : ""
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "placeholder" : {
+                          "type" : "interpolation"
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.itemInput.itemPrice"
                         },
                         "min" : {
                           "type" : "constant"
@@ -426,22 +282,41 @@
                         "max" : {
                           "type" : "constant"
                         },
-                        "step" : {
+                        "maskCurrency" : {
                           "type" : "constant",
-                          "value" : 1
+                          "value" : "€"
+                        },
+                        "orientation" : {
+                          "type" : "constant",
+                          "value" : "right"
+                        },
+                        "indentation" : {
+                          "type" : "constant",
+                          "value" : "none"
+                        },
+                        "decimalSize" : {
+                          "type" : "constant",
+                          "value" : 2
+                        },
+                        "decimal" : {
+                          "type" : "constant",
+                          "value" : ","
+                        },
+                        "group" : {
+                          "type" : "constant",
+                          "value" : "whitespace"
                         }
                       },
-                      "reference" : "7aed2997-7a2b-45e8-9ac9-b0bba58a7fd5",
+                      "reference" : "fca83aae-5ffe-4ac3-b760-319d5e706cad",
                       "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
+                      "id" : "pbCurrencyInput"
                     },
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 2,
-                        "sm" : 2,
-                        "xs" : 2,
+                        "md" : 6,
+                        "sm" : 12,
+                        "xs" : 6,
                         "lg" : 6
                       },
                       "propertyValues" : {
@@ -471,7 +346,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Number"
+                          "value" : "Item Warehouse Amount"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -486,7 +361,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "formInput.customerInput.customerHouseNumber"
+                          "value" : "formInput.itemInput.itemWarehouseAmount"
                         },
                         "required" : {
                           "type" : "constant",
@@ -516,9 +391,62 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "e797e290-df23-45a9-831a-503333001e0f",
+                      "reference" : "d2e295c9-4eb4-4317-839c-d72b43c9cb7b",
                       "hasValidationError" : false,
                       "id" : "pbInput",
+                      "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "disabled" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Item Availability"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.itemInput.itemAvailability"
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : false
+                        }
+                      },
+                      "reference" : "c0c7fcda-2f19-45c4-b59c-81d20a924f2c",
+                      "hasValidationError" : false,
+                      "id" : "pbCheckbox",
                       "description" : ""
                     }
                   ]
@@ -621,7 +549,7 @@
                     "value" : ""
                   }
                 },
-                "reference" : "fad282d3-0cf9-441b-9eb4-9cc50eca6c7e",
+                "reference" : "30b0f06d-497e-49d4-9842-ffb8f6c329ef",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -673,7 +601,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "876c5824-7ecc-485b-92b4-685bb22d9f31",
+                "reference" : "682f4134-b617-4916-87ca-f80e130b6113",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -686,14 +614,14 @@
   ],
   "assets" : [
     {
-      "id" : "1a932c6e-083f-473d-8109-e4dfad1e550a",
+      "id" : "aa7b85c6-1753-4d9f-ba62-0ef6ac966db6",
       "name" : "style.css",
       "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "3a78da54-0fd6-4c0b-ac4d-50737c3a4119",
+      "id" : "5c4a1419-6a0f-4b26-8900-a1a3998a9114",
       "name" : "localization.json",
       "type" : "json",
       "order" : 0,
@@ -706,14 +634,14 @@
       "type" : "json",
       "value" : [
         "{",
-        "  \"customerInput\" : {",
-        "    \"customerName\" : \"\",",
-        "    \"customerCountry\" : \"\",",
-        "    \"customerPostalCode\" : 0,",
-        "    \"customerCity\" : \"\",",
-        "    \"customerStreet\" : \"\",",
-        "    \"customerHouseNumber\" : 0,",
-        "    \"customerReviewed\" : false",
+        "  \"itemInput\" : {",
+        "    \"itemName\" : \"\",",
+        "    \"itemDescription\" : \"\",",
+        "    \"itemPrice\" : 0,",
+        "    \"itemAmount\" : 0,",
+        "    \"itemWarehouseAmount\" : 0,",
+        "    \"itemAvailability\" : false,",
+        "    \"itemReviewed\" : false",
         "  }",
         "}"
       ],
@@ -738,14 +666,14 @@
       "type" : "expression",
       "value" : [
         "return {",
-        "\tcustomerInput: $data.formInput.customerInput",
+        "\titemInput: $data.formInput.itemInput",
         "}"
       ],
       "exposed" : false
     }
   },
   "hasValidationError" : false,
-  "uuid" : "3de0793e-ceb1-4d29-ba9f-451b88a2ed7b",
+  "uuid" : "85da8762-90e0-4d62-bf70-0b5f4fc0a4fe",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }

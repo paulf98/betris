@@ -3,59 +3,186 @@
   <process:MainProcess xmi:id="_B8UKEJA6Ee2uApVH8jDrtw" name="CreateCustomer" bonitaModelVersion="7.12.0-004">
     <elements xmi:type="process:Pool" xmi:id="_B8UKEZA6Ee2uApVH8jDrtw" name="Create Customer" displayName="Create Customer">
       <elements xmi:type="process:Lane" xmi:id="_B8UKEpA6Ee2uApVH8jDrtw" name="Customer lane" actor="_B8UxIZA6Ee2uApVH8jDrtw">
-        <elements xmi:type="process:StartEvent" xmi:id="_B8UKE5A6Ee2uApVH8jDrtw" name="Start1" outgoing="_0FrDAJA8Ee2uApVH8jDrtw">
+        <elements xmi:type="process:StartEvent" xmi:id="_B8UKE5A6Ee2uApVH8jDrtw" name="Start1" outgoing="_BirycJS2Ee2ahJTHTeqksQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_B8UKFJA6Ee2uApVH8jDrtw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_B8UKFZA6Ee2uApVH8jDrtw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_B8UKFpA6Ee2uApVH8jDrtw" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:EndEvent" xmi:id="_WbF7YJA6Ee2uApVH8jDrtw" name="End1" incoming="_0FrDAJA8Ee2uApVH8jDrtw">
+      </elements>
+      <elements xmi:type="process:Lane" xmi:id="_3gtzsJS0Ee2ahJTHTeqksQ" name="Shop Management" actor="_07DjkJS1Ee2ahJTHTeqksQ">
+        <elements xmi:type="process:Task" xmi:id="_-7efoJS1Ee2ahJTHTeqksQ" name="Review Customer Data" outgoing="_CMAcQJS2Ee2ahJTHTeqksQ" incoming="_BirycJS2Ee2ahJTHTeqksQ" overrideActorsOfTheLane="false">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_-7j_MZS1Ee2ahJTHTeqksQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_-7j_MJS1Ee2ahJTHTeqksQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_-7j_MpS1Ee2ahJTHTeqksQ" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_InQhEJS5Ee2ahJTHTeqksQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_InQhEZS5Ee2ahJTHTeqksQ" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_InRIIJS5Ee2ahJTHTeqksQ" name="customer" dataType="_B8UxOpA6Ee2uApVH8jDrtw" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_InRvMJS5Ee2ahJTHTeqksQ" name="customerInput.customerName" content="customerInput?.customerName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_InRvMZS5Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_InRvMpS5Ee2ahJTHTeqksQ" type="JAVA_METHOD" expression="setCustomerName">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_InRvM5S5Ee2ahJTHTeqksQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_InRvNJS5Ee2ahJTHTeqksQ" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_InRvNZS5Ee2ahJTHTeqksQ" name="customer" dataType="_B8UxOpA6Ee2uApVH8jDrtw" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_InRvNpS5Ee2ahJTHTeqksQ" name="customerInput.customerCountry" content="customerInput?.customerCountry" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_InRvN5S5Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_InRvOJS5Ee2ahJTHTeqksQ" type="JAVA_METHOD" expression="setCustomerCountry">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_InRvOZS5Ee2ahJTHTeqksQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_InRvOpS5Ee2ahJTHTeqksQ" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_InRvO5S5Ee2ahJTHTeqksQ" name="customer" dataType="_B8UxOpA6Ee2uApVH8jDrtw" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_InRvPJS5Ee2ahJTHTeqksQ" name="customerInput.customerPostalCode" content="customerInput?.customerPostalCode" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_InRvPZS5Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_InRvPpS5Ee2ahJTHTeqksQ" type="JAVA_METHOD" expression="setCustomerPostalCode">
+              <inputTypes>java.lang.Integer</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_InRvP5S5Ee2ahJTHTeqksQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_InRvQJS5Ee2ahJTHTeqksQ" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_InRvQZS5Ee2ahJTHTeqksQ" name="customer" dataType="_B8UxOpA6Ee2uApVH8jDrtw" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_InRvQpS5Ee2ahJTHTeqksQ" name="customerInput.customerCity" content="customerInput?.customerCity" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_InRvQ5S5Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_InRvRJS5Ee2ahJTHTeqksQ" type="JAVA_METHOD" expression="setCustomerCity">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_InRvRZS5Ee2ahJTHTeqksQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_InRvRpS5Ee2ahJTHTeqksQ" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_InRvR5S5Ee2ahJTHTeqksQ" name="customer" dataType="_B8UxOpA6Ee2uApVH8jDrtw" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_InRvSJS5Ee2ahJTHTeqksQ" name="customerInput.customerStreet" content="customerInput?.customerStreet" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_InRvSZS5Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_InRvSpS5Ee2ahJTHTeqksQ" type="JAVA_METHOD" expression="setCustomerStreet">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_InRvS5S5Ee2ahJTHTeqksQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_InRvTJS5Ee2ahJTHTeqksQ" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_InRvTZS5Ee2ahJTHTeqksQ" name="customer" dataType="_B8UxOpA6Ee2uApVH8jDrtw" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_InRvTpS5Ee2ahJTHTeqksQ" name="customerInput.customerHouseNumber" content="customerInput?.customerHouseNumber" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_InRvT5S5Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_InRvUJS5Ee2ahJTHTeqksQ" type="JAVA_METHOD" expression="setCustomerHouseNumber">
+              <inputTypes>java.lang.Integer</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_InRvUZS5Ee2ahJTHTeqksQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_InRvUpS5Ee2ahJTHTeqksQ" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_InRvU5S5Ee2ahJTHTeqksQ" name="customer" dataType="_B8UxOpA6Ee2uApVH8jDrtw" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_InRvVJS5Ee2ahJTHTeqksQ" name="customerInput.customerReviewed" content="customerInput?.customerReviewed" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_InRvVZS5Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_InRvVpS5Ee2ahJTHTeqksQ" type="JAVA_METHOD" expression="setCustomerReviewed">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_-7j_M5S1Ee2ahJTHTeqksQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_-7j_NJS1Ee2ahJTHTeqksQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_-7j_NZS1Ee2ahJTHTeqksQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_-7j_N5S1Ee2ahJTHTeqksQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_-7j_NpS1Ee2ahJTHTeqksQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <formMapping xmi:type="process:FormMapping" xmi:id="_-7kmQJS1Ee2ahJTHTeqksQ">
+            <targetForm xmi:type="expression:Expression" xmi:id="_Kj9eUJS5Ee2ahJTHTeqksQ" name="CreateCustomerReview" content="1e545189-0a81-4af0-a220-993506625daa" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+          </formMapping>
+          <contract xmi:type="process:Contract" xmi:id="_-7j_OJS1Ee2ahJTHTeqksQ">
+            <inputs xmi:type="process:ContractInput" xmi:id="_InFh8JS5Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX" dataReference="customer" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_InGJAJS5Ee2ahJTHTeqksQ" name="customerName" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_InGJAZS5Ee2ahJTHTeqksQ" name="customerCountry" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_InGJApS5Ee2ahJTHTeqksQ" name="customerPostalCode" type="INTEGER" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_InGJA5S5Ee2ahJTHTeqksQ" name="customerCity" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_InGJBJS5Ee2ahJTHTeqksQ" name="customerStreet" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_InGJBZS5Ee2ahJTHTeqksQ" name="customerHouseNumber" type="INTEGER" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_InGJBpS5Ee2ahJTHTeqksQ" name="customerReviewed" type="BOOLEAN" createMode="false"/>
+            </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_InOE0JS5Ee2ahJTHTeqksQ" expression="customerInput?.customerName != null" errorMessage="customerName is mandatory for Customer" name="mandatory_customerInput_customerName">
+              <inputNames>customerInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_InOE0ZS5Ee2ahJTHTeqksQ" expression="customerInput?.customerCountry != null" errorMessage="customerCountry is mandatory for Customer" name="mandatory_customerInput_customerCountry">
+              <inputNames>customerInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_InOE0pS5Ee2ahJTHTeqksQ" expression="customerInput?.customerPostalCode != null" errorMessage="customerPostalCode is mandatory for Customer" name="mandatory_customerInput_customerPostalCode">
+              <inputNames>customerInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_InOE05S5Ee2ahJTHTeqksQ" expression="customerInput?.customerCity != null" errorMessage="customerCity is mandatory for Customer" name="mandatory_customerInput_customerCity">
+              <inputNames>customerInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_InOE1JS5Ee2ahJTHTeqksQ" expression="customerInput?.customerStreet != null" errorMessage="customerStreet is mandatory for Customer" name="mandatory_customerInput_customerStreet">
+              <inputNames>customerInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_InOE1ZS5Ee2ahJTHTeqksQ" expression="customerInput?.customerHouseNumber != null" errorMessage="customerHouseNumber is mandatory for Customer" name="mandatory_customerInput_customerHouseNumber">
+              <inputNames>customerInput</inputNames>
+            </constraints>
+          </contract>
+          <expectedDuration xmi:type="expression:Expression" xmi:id="_-7kmQpS1Ee2ahJTHTeqksQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:EndEvent" xmi:id="_WbF7YJA6Ee2uApVH8jDrtw" name="End1" incoming="_CMAcQJS2Ee2ahJTHTeqksQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_WbGicZA6Ee2uApVH8jDrtw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_WbGicJA6Ee2uApVH8jDrtw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_WbGicpA6Ee2uApVH8jDrtw" name="" content="" returnTypeFixed="true"/>
         </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="__HYAcJA9Ee2uApVH8jDrtw" name="customer" dataType="_B8UxOpA6Ee2uApVH8jDrtw" className="com.company.model.Customer">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_FAyq5pA-Ee2uApVH8jDrtw" name="initCustomer()" content="def customerVar = new com.company.model.Customer()&#xD;&#xA;customerVar.customerFirstName = customerInput?.customerFirstName&#xD;&#xA;customerVar.customerLastName = customerInput?.customerLastName&#xD;&#xA;customerVar.customerCountry = customerInput?.customerCountry&#xD;&#xA;customerVar.customerPostalCode = customerInput?.customerPostalCode&#xD;&#xA;customerVar.customerCity = customerInput?.customerCity&#xD;&#xA;customerVar.customerStreet = customerInput?.customerStreet&#xD;&#xA;customerVar.customerHouseNumber = customerInput?.customerHouseNumber&#xD;&#xA;return customerVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer">
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_FAyq55A-Ee2uApVH8jDrtw" name="customerInput" type="COMPLEX"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="__Ndc8JS0Ee2ahJTHTeqksQ" name="initCustomer()" content="def customerVar = new com.company.model.Customer()&#xA;customerVar.customerName = customerInput?.customerName&#xA;customerVar.customerCountry = customerInput?.customerCountry&#xA;customerVar.customerPostalCode = customerInput?.customerPostalCode&#xA;customerVar.customerCity = customerInput?.customerCity&#xA;customerVar.customerStreet = customerInput?.customerStreet&#xA;customerVar.customerHouseNumber = customerInput?.customerHouseNumber&#xA;customerVar.customerReviewed = customerInput?.customerReviewed&#xA;return customerVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="__Ndc8ZS0Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX"/>
         </defaultValue>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_B8UKJJA6Ee2uApVH8jDrtw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_Cdy_IJA9Ee2uApVH8jDrtw" name="CreateCustomer" content="c2f80711-55a2-432f-860c-fb87c2e8c4b9" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_BPBFAJS1Ee2ahJTHTeqksQ" name="CreateCustomer" content="3de0793e-ceb1-4d29-ba9f-451b88a2ed7b" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_B8UKJpA6Ee2uApVH8jDrtw">
         <targetForm xmi:type="expression:Expression" xmi:id="_B8UKJ5A6Ee2uApVH8jDrtw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_0FrDAJA8Ee2uApVH8jDrtw" target="_WbF7YJA6Ee2uApVH8jDrtw" source="_B8UKE5A6Ee2uApVH8jDrtw">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_0FrDAZA8Ee2uApVH8jDrtw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_0FrqEJA8Ee2uApVH8jDrtw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_BirycJS2Ee2ahJTHTeqksQ" target="_-7efoJS1Ee2ahJTHTeqksQ" source="_B8UKE5A6Ee2uApVH8jDrtw">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Biwq8JS2Ee2ahJTHTeqksQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_Biwq8ZS2Ee2ahJTHTeqksQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_CMAcQJS2Ee2ahJTHTeqksQ" target="_WbF7YJA6Ee2uApVH8jDrtw" source="_-7efoJS1Ee2ahJTHTeqksQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_CMBqYJS2Ee2ahJTHTeqksQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_CMBqYZS2Ee2ahJTHTeqksQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_B8UxIZA6Ee2uApVH8jDrtw" documentation="This is an example of actor that is mapped to any ACME users" name="admin" initiator="true"/>
+      <actors xmi:type="process:Actor" xmi:id="_07DjkJS1Ee2ahJTHTeqksQ" name="manager"/>
       <contract xmi:type="process:Contract" xmi:id="_B8UxIpA6Ee2uApVH8jDrtw">
-        <inputs xmi:type="process:ContractInput" xmi:id="_FAyD0JA-Ee2uApVH8jDrtw" name="customerInput" type="COMPLEX" dataReference="customer">
-          <inputs xmi:type="process:ContractInput" xmi:id="_FAyD0ZA-Ee2uApVH8jDrtw" name="customerFirstName"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_FAyD0pA-Ee2uApVH8jDrtw" name="customerLastName"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_FAyD05A-Ee2uApVH8jDrtw" name="customerCountry"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_FAyD1JA-Ee2uApVH8jDrtw" name="customerPostalCode" type="INTEGER"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_FAyD1ZA-Ee2uApVH8jDrtw" name="customerCity"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_FAyD1pA-Ee2uApVH8jDrtw" name="customerStreet"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_FAyD15A-Ee2uApVH8jDrtw" name="customerHouseNumber"/>
+        <inputs xmi:type="process:ContractInput" xmi:id="__NTr8JS0Ee2ahJTHTeqksQ" name="customerInput" type="COMPLEX" dataReference="customer">
+          <inputs xmi:type="process:ContractInput" xmi:id="__NU6EJS0Ee2ahJTHTeqksQ" name="customerName"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="__NU6EZS0Ee2ahJTHTeqksQ" name="customerCountry"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="__NU6EpS0Ee2ahJTHTeqksQ" name="customerPostalCode" type="INTEGER"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="__NU6E5S0Ee2ahJTHTeqksQ" name="customerCity"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="__NU6FJS0Ee2ahJTHTeqksQ" name="customerStreet"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="__NU6FZS0Ee2ahJTHTeqksQ" name="customerHouseNumber" type="INTEGER"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="__NU6FpS0Ee2ahJTHTeqksQ" name="customerReviewed" type="BOOLEAN"/>
         </inputs>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_FAyq4JA-Ee2uApVH8jDrtw" expression="customerInput?.customerLastName != null" errorMessage="customerLastName is mandatory for Customer" name="mandatory_customerInput_customerLastName">
+        <constraints xmi:type="process:ContractConstraint" xmi:id="__NYkcJS0Ee2ahJTHTeqksQ" expression="customerInput?.customerName != null" errorMessage="customerName is mandatory for Customer" name="mandatory_customerInput_customerName">
           <inputNames>customerInput</inputNames>
         </constraints>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_FAyq4ZA-Ee2uApVH8jDrtw" expression="customerInput?.customerCountry != null" errorMessage="customerCountry is mandatory for Customer" name="mandatory_customerInput_customerCountry">
+        <constraints xmi:type="process:ContractConstraint" xmi:id="__NYkcZS0Ee2ahJTHTeqksQ" expression="customerInput?.customerCountry != null" errorMessage="customerCountry is mandatory for Customer" name="mandatory_customerInput_customerCountry">
           <inputNames>customerInput</inputNames>
         </constraints>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_FAyq4pA-Ee2uApVH8jDrtw" expression="customerInput?.customerPostalCode != null" errorMessage="customerPostalCode is mandatory for Customer" name="mandatory_customerInput_customerPostalCode">
+        <constraints xmi:type="process:ContractConstraint" xmi:id="__NYkcpS0Ee2ahJTHTeqksQ" expression="customerInput?.customerPostalCode != null" errorMessage="customerPostalCode is mandatory for Customer" name="mandatory_customerInput_customerPostalCode">
           <inputNames>customerInput</inputNames>
         </constraints>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_FAyq45A-Ee2uApVH8jDrtw" expression="customerInput?.customerCity != null" errorMessage="customerCity is mandatory for Customer" name="mandatory_customerInput_customerCity">
+        <constraints xmi:type="process:ContractConstraint" xmi:id="__NYkc5S0Ee2ahJTHTeqksQ" expression="customerInput?.customerCity != null" errorMessage="customerCity is mandatory for Customer" name="mandatory_customerInput_customerCity">
           <inputNames>customerInput</inputNames>
         </constraints>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_FAyq5JA-Ee2uApVH8jDrtw" expression="customerInput?.customerStreet != null" errorMessage="customerStreet is mandatory for Customer" name="mandatory_customerInput_customerStreet">
+        <constraints xmi:type="process:ContractConstraint" xmi:id="__NYkdJS0Ee2ahJTHTeqksQ" expression="customerInput?.customerStreet != null" errorMessage="customerStreet is mandatory for Customer" name="mandatory_customerInput_customerStreet">
           <inputNames>customerInput</inputNames>
         </constraints>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_FAyq5ZA-Ee2uApVH8jDrtw" expression="customerInput?.customerHouseNumber != null" errorMessage="customerHouseNumber is mandatory for Customer" name="mandatory_customerInput_customerHouseNumber">
+        <constraints xmi:type="process:ContractConstraint" xmi:id="__NYkdZS0Ee2ahJTHTeqksQ" expression="customerInput?.customerHouseNumber != null" errorMessage="customerHouseNumber is mandatory for Customer" name="mandatory_customerInput_customerHouseNumber">
           <inputNames>customerInput</inputNames>
         </constraints>
       </contract>
@@ -103,18 +230,32 @@
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B8UxSJA6Ee2uApVH8jDrtw" x="60" y="68"/>
             </children>
-            <children xmi:type="notation:Shape" xmi:id="_WbHwkJA6Ee2uApVH8jDrtw" type="3003" element="_WbF7YJA6Ee2uApVH8jDrtw" fontName="Segoe UI">
-              <children xmi:type="notation:DecorationNode" xmi:id="_WbIXoZA6Ee2uApVH8jDrtw" type="5025">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_WbIXopA6Ee2uApVH8jDrtw" y="5"/>
-              </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WbIXoJA6Ee2uApVH8jDrtw" x="346" y="68"/>
-            </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_B8UxSZA6Ee2uApVH8jDrtw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_B8UxSpA6Ee2uApVH8jDrtw" fontName="Segoe UI"/>
           <styles xmi:type="notation:LineStyle" xmi:id="_B8UxS5A6Ee2uApVH8jDrtw"/>
           <styles xmi:type="notation:FillStyle" xmi:id="_B8UxTJA6Ee2uApVH8jDrtw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B8UxTZA6Ee2uApVH8jDrtw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B8UxTZA6Ee2uApVH8jDrtw" x="44" y="10" width="1301" height="250"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_3hDK4JS0Ee2ahJTHTeqksQ" type="3007" element="_3gtzsJS0Ee2ahJTHTeqksQ">
+          <children xmi:type="notation:DecorationNode" xmi:id="_3hHcUJS0Ee2ahJTHTeqksQ" type="5007"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_3hIDYJS0Ee2ahJTHTeqksQ" type="7002">
+            <children xmi:type="notation:Shape" xmi:id="_-7rT8JS1Ee2ahJTHTeqksQ" type="3005" element="_-7efoJS1Ee2ahJTHTeqksQ" fontName=".AppleSystemUIFont" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_-7u-UJS1Ee2ahJTHTeqksQ" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-7r7AJS1Ee2ahJTHTeqksQ" x="160" y="121" width="120" height="60"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_WbHwkJA6Ee2uApVH8jDrtw" type="3003" element="_WbF7YJA6Ee2uApVH8jDrtw" fontName="Segoe UI">
+              <children xmi:type="notation:DecorationNode" xmi:id="_WbIXoZA6Ee2uApVH8jDrtw" type="5025">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_WbIXopA6Ee2uApVH8jDrtw" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WbIXoJA6Ee2uApVH8jDrtw" x="375" y="137"/>
+            </children>
+          </children>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_3hDx8JS0Ee2ahJTHTeqksQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_3hDx8ZS0Ee2ahJTHTeqksQ" fontName=".AppleSystemUIFont"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_3hDx8pS0Ee2ahJTHTeqksQ"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_3hIDYZS0Ee2ahJTHTeqksQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3hDx85S0Ee2ahJTHTeqksQ" x="141" y="172"/>
         </children>
       </children>
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_B8UxTpA6Ee2uApVH8jDrtw"/>
@@ -124,14 +265,21 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B8UxUpA6Ee2uApVH8jDrtw" width="1320" height="250"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_B8UxU5A6Ee2uApVH8jDrtw"/>
-    <edges xmi:type="notation:Connector" xmi:id="_0FsRIJA8Ee2uApVH8jDrtw" type="4001" element="_0FrDAJA8Ee2uApVH8jDrtw" source="_B8UxRZA6Ee2uApVH8jDrtw" target="_WbHwkJA6Ee2uApVH8jDrtw" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_0FsRI5A8Ee2uApVH8jDrtw" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_0FsRJJA8Ee2uApVH8jDrtw" y="-10"/>
+    <edges xmi:type="notation:Connector" xmi:id="_BizHMJS2Ee2ahJTHTeqksQ" type="4001" element="_BirycJS2Ee2ahJTHTeqksQ" source="_B8UxRZA6Ee2uApVH8jDrtw" target="_-7rT8JS1Ee2ahJTHTeqksQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Bi2xkJS2Ee2ahJTHTeqksQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Bi2xkZS2Ee2ahJTHTeqksQ" y="-10"/>
       </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_0FsRIZA8Ee2uApVH8jDrtw" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0FsRIpA8Ee2uApVH8jDrtw" points="[-1, -9, -266, 0]$[262, -9, -3, 0]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0FuGUJA8Ee2uApVH8jDrtw" id="(1.0,0.8333333333333334)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0FuGUZA8Ee2uApVH8jDrtw" id="(0.1,0.5333333333333333)"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_BizuQJS2Ee2ahJTHTeqksQ" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BizuQZS2Ee2ahJTHTeqksQ" points="[-3, -7, -133, -311]$[70, 296, -60, -8]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BjGCIJS2Ee2ahJTHTeqksQ" id="(1.0,0.9666666666666667)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_CMFUwJS2Ee2ahJTHTeqksQ" type="4001" element="_CMAcQJS2Ee2ahJTHTeqksQ" source="_-7rT8JS1Ee2ahJTHTeqksQ" target="_WbHwkJA6Ee2uApVH8jDrtw" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_CMGi4JS2Ee2ahJTHTeqksQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CMGi4ZS2Ee2ahJTHTeqksQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_CMFUwZS2Ee2ahJTHTeqksQ" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CMFUwpS2Ee2ahJTHTeqksQ" points="[0, 3, -110, 9]$[98, 3, -12, 9]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CMPs0JS2Ee2ahJTHTeqksQ" id="(1.0,0.43333333333333335)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
