@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "viewOrderInsideOfBilling",
   "name" : "viewOrderInsideOfBilling",
-  "lastUpdate" : 1673541040630,
+  "lastUpdate" : 1673881155617,
   "rows" : [
     [
       {
@@ -1013,6 +1013,10 @@
                         "dimension" : {
                           "type" : "constant",
                           "value" : 12
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : false
                         }
                       },
                       "reference" : "5d1254e9-e049-4475-910c-7b9876cb8bb8",
@@ -1115,7 +1119,7 @@
                               },
                               "displayedKey" : {
                                 "type" : "constant",
-                                "value" : "customerLastName"
+                                "value" : "customerName"
                               },
                               "returnedKey" : {
                                 "type" : "constant"

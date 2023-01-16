@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "ReviewOrderInWarehouse",
   "name" : "ReviewOrderInWarehouse",
-  "lastUpdate" : 1673595984969,
+  "lastUpdate" : 1673881036985,
   "rows" : [
     [
       {
@@ -1111,7 +1111,7 @@
                               },
                               "displayedKey" : {
                                 "type" : "constant",
-                                "value" : "customerFirstName + \" \" + customerLastName"
+                                "value" : "customerName"
                               },
                               "returnedKey" : {
                                 "type" : "constant"

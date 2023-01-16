@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "CreateOrderNew",
   "name" : "CreateOrderNew",
-  "lastUpdate" : 1673880353743,
+  "lastUpdate" : 1673881216830,
   "rows" : [
     [
       {
@@ -220,6 +220,21 @@
                               "required" : {
                                 "type" : "constant",
                                 "value" : true
+                              },
+                              "disabled" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "displayedKey" : {
+                                "type" : "constant",
+                                "value" : "itemName"
+                              },
+                              "returnedKey" : {
+                                "type" : "constant"
                               }
                             },
                             "reference" : "845b60d4-ac9e-4e66-9097-d229dc7c00e2",
@@ -439,6 +454,21 @@
                         "required" : {
                           "type" : "constant",
                           "value" : false
+                        },
+                        "disabled" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "displayedKey" : {
+                          "type" : "constant",
+                          "value" : "customerName"
+                        },
+                        "returnedKey" : {
+                          "type" : "constant"
                         }
                       },
                       "reference" : "2aeb0351-4abd-4529-a3c0-4437c6854d2d",
