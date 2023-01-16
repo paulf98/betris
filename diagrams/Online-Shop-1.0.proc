@@ -58,6 +58,17 @@
               <inputTypes>com.company.model.Customer</inputTypes>
             </operator>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_w0gsoJXAEe2_0s1-Kw3qlQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_w0gsoZXAEe2_0s1-Kw3qlQ" name="order" content="order" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_xXoAwJXAEe2_0s1-Kw3qlQ" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_w0gsopXAEe2_0s1-Kw3qlQ" name="orderInput.orderTotal" content="orderInput?.orderTotal" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Double">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_6oBOEJXAEe2_0s1-Kw3qlQ" name="orderInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_w0gso5XAEe2_0s1-Kw3qlQ" type="JAVA_METHOD" expression="setOrderTotal">
+              <inputTypes>java.lang.Double</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_oJGb8ojsEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_oJGb84jsEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_oJGb9IjsEe2WY_GAK9s2hw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -75,6 +86,9 @@
               <inputs xmi:type="process:ContractInput" xmi:id="_8GcLM5TAEe2ahJTHTeqksQ" name="orderStatus" createMode="false"/>
               <inputs xmi:type="process:ContractInput" xmi:id="_8GcLNJTAEe2ahJTHTeqksQ" name="orderCustomer" type="COMPLEX" createMode="false">
                 <inputs xmi:type="process:ContractInput" xmi:id="_8GcLNZTAEe2ahJTHTeqksQ" name="persistenceId_string" createMode="false"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_U2bRIJXAEe2_0s1-Kw3qlQ" name="orderTotal" type="DECIMAL">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_U2bRIZXAEe2_0s1-Kw3qlQ"/>
               </inputs>
             </inputs>
             <constraints xmi:type="process:ContractConstraint" xmi:id="_8GdZUJTAEe2ahJTHTeqksQ" expression="!orderInput?.orderItems || orderInput?.orderItems?.persistenceId_string" errorMessage="Item must reference an existing instance with a persistenceId for OrderItems" name="aggregation_orderInput_orderItems">
@@ -268,6 +282,17 @@
             <inputTypes>com.company.model.Customer</inputTypes>
           </operator>
         </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_9DEUMJXAEe2_0s1-Kw3qlQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_9DEUMZXAEe2_0s1-Kw3qlQ" name="orderItems" content="orderItems" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9hJXUJXAEe2_0s1-Kw3qlQ" name="orderItems" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_9DEUMpXAEe2_0s1-Kw3qlQ" name="orderItemsInput.orderTotal" content="orderItemsInput?.orderTotal" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Double">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_Gzxj0JXCEe2_0s1-Kw3qlQ" name="orderItemsInput" type="COMPLEX" createMode="false"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_9DEUM5XAEe2_0s1-Kw3qlQ" type="JAVA_METHOD" expression="setOrderTotal">
+            <inputTypes>java.lang.Double</inputTypes>
+          </operator>
+        </operations>
         <loopCondition xmi:type="expression:Expression" xmi:id="_I7MFkZGLEe2vw_080mFBEg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         <loopMaximum xmi:type="expression:Expression" xmi:id="_I7MsoJGLEe2vw_080mFBEg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
         <cardinalityExpression xmi:type="expression:Expression" xmi:id="_I7MsoZGLEe2vw_080mFBEg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -285,6 +310,9 @@
             <inputs xmi:type="process:ContractInput" xmi:id="_PYm085GLEe2vw_080mFBEg" name="orderStatus" createMode="false"/>
             <inputs xmi:type="process:ContractInput" xmi:id="_PYm09JGLEe2vw_080mFBEg" name="orderCustomer" type="COMPLEX" createMode="false">
               <inputs xmi:type="process:ContractInput" xmi:id="_PYm09ZGLEe2vw_080mFBEg" name="persistenceId_string" createMode="false"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_g6kYcJXAEe2_0s1-Kw3qlQ" name="orderTotal" type="DECIMAL">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_g6kYcZXAEe2_0s1-Kw3qlQ"/>
             </inputs>
           </inputs>
           <constraints xmi:type="process:ContractConstraint" xmi:id="_PYpRMJGLEe2vw_080mFBEg" expression="!orderItemsInput?.orderItems || orderItemsInput?.orderItems?.persistenceId_string" errorMessage="Item must reference an existing instance with a persistenceId for OrderItems" name="aggregation_orderItemsInput_orderItems">
@@ -358,7 +386,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_Fbo1gZGLEe2vw_080mFBEg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_8Z1tD5EKEe2vw_080mFBEg">
-        <targetForm xmi:type="expression:Expression" xmi:id="_5fCwoJW8Ee2_0s1-Kw3qlQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_lrT4sJXCEe2_0s1-Kw3qlQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_8Z1tEZEKEe2vw_080mFBEg">
         <targetForm xmi:type="expression:Expression" xmi:id="_8Z1tEpEKEe2vw_080mFBEg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -521,7 +549,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_12DNgZW4Ee2_0s1-Kw3qlQ" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_I-hST5KPEe2Mw6a3EPV1PQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_5Wss8JW8Ee2_0s1-Kw3qlQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_li0EAJXCEe2_0s1-Kw3qlQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_I-hSUZKPEe2Mw6a3EPV1PQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_I-hSUpKPEe2Mw6a3EPV1PQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -652,6 +680,17 @@
             <inputTypes>com.company.model.Customer</inputTypes>
           </operator>
         </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_2SyBQJXCEe2_0s1-Kw3qlQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_2SyBQZXCEe2_0s1-Kw3qlQ" name="orderItems" content="orderItems" type="TYPE_VARIABLE" returnType="com.company.model.OrderItems">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_2wqQEJXCEe2_0s1-Kw3qlQ" name="orderItems" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_2SyBQpXCEe2_0s1-Kw3qlQ" name="orderItemInput.orderTotal" content="orderItems?.orderTotal" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Double">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9EGkEJXCEe2_0s1-Kw3qlQ" name="orderItems" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_2SyBQ5XCEe2_0s1-Kw3qlQ" type="JAVA_METHOD" expression="setOrderTotal">
+            <inputTypes>java.lang.Double</inputTypes>
+          </operator>
+        </operations>
         <loopCondition xmi:type="expression:Expression" xmi:id="_LGi7M5WvEe2_0s1-Kw3qlQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         <loopMaximum xmi:type="expression:Expression" xmi:id="_LGi7NJWvEe2_0s1-Kw3qlQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
         <cardinalityExpression xmi:type="expression:Expression" xmi:id="_LGi7NZWvEe2_0s1-Kw3qlQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -670,6 +709,9 @@
             <inputs xmi:type="process:ContractInput" xmi:id="_OGPmhZWvEe2_0s1-Kw3qlQ" name="orderCustomer" type="COMPLEX" createMode="false">
               <inputs xmi:type="process:ContractInput" xmi:id="_OGPmhpWvEe2_0s1-Kw3qlQ" name="persistenceId_string" createMode="false"/>
             </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_0wS60JXCEe2_0s1-Kw3qlQ" name="orderTotal" type="DECIMAL">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_0wS60ZXCEe2_0s1-Kw3qlQ"/>
+            </inputs>
           </inputs>
           <constraints xmi:type="process:ContractConstraint" xmi:id="_OGPmh5WvEe2_0s1-Kw3qlQ" expression="!orderItemsInput?.orderItems || orderItemsInput?.orderItems?.persistenceId_string" errorMessage="Item must reference an existing instance with a persistenceId for OrderItems" name="aggregation_orderItemsInput_orderItems">
             <inputNames>orderItemsInput</inputNames>
@@ -687,7 +729,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_7UrZMZMiEe2ahJTHTeqksQ" content=""/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_3kfXAJMgEe2ahJTHTeqksQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_5cXQEJW8Ee2_0s1-Kw3qlQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_lovF0JXCEe2_0s1-Kw3qlQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_3kf-EZMgEe2ahJTHTeqksQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_3kf-EpMgEe2ahJTHTeqksQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>

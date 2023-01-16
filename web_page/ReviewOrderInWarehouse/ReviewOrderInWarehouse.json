@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "ReviewOrderInWarehouse",
   "name" : "ReviewOrderInWarehouse",
-  "lastUpdate" : 1673881036985,
+  "lastUpdate" : 1673889845711,
   "rows" : [
     [
       {
@@ -1794,7 +1794,8 @@
         "\t\t\torderStatus: \"AVAILABLE\",",
         "\t\t\torderCustomer: $data.orderItems.orderCustomer ? {",
         "\t\t\t\tpersistenceId_string: $data.orderItems.orderCustomer.persistenceId_string !== undefined ? $data.orderItems.orderCustomer.persistenceId_string : null",
-        "\t\t\t} : null",
+        "\t\t\t} : null,",
+        "\t\t\torderTotal: $data.orderItems.orderTotal !== undefined ? $data.orderItems.orderTotal : null",
         "\t\t}",
         "\t}",
         "}"
@@ -1853,7 +1854,8 @@
         "\t\t\torderStatus: \"UNAVAILABLE\",",
         "\t\t\torderCustomer: $data.orderItems.orderCustomer ? {",
         "\t\t\t\tpersistenceId_string: $data.orderItems.orderCustomer.persistenceId_string !== undefined ? $data.orderItems.orderCustomer.persistenceId_string : null",
-        "\t\t\t} : null",
+        "\t\t\t} : null,",
+        "\t\t\torderTotal: $data.orderItems.orderTotal !== undefined ? $data.orderItems.orderTotal : null",
         "\t\t}",
         "\t}",
         "}"

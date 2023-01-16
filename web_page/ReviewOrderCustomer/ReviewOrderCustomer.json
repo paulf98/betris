@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "ReviewOrderCustomer",
   "name" : "ReviewOrderCustomer",
-  "lastUpdate" : 1673780818870,
+  "lastUpdate" : 1673889462257,
   "rows" : [
     [
       {
@@ -1389,7 +1389,8 @@
         "\t\t\torderStatus: \"CONFIRMED\",",
         "\t\t\torderCustomer: $data.order.orderCustomer ? {",
         "\t\t\t\tpersistenceId_string: $data.order.orderCustomer.persistenceId_string !== undefined ? $data.order.orderCustomer.persistenceId_string : null",
-        "\t\t\t} : null",
+        "\t\t\t} : null,",
+        "\t\t\torderTotal: $data.orderTotal",
         "\t\t}",
         "\t}",
         "}"

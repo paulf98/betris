@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "OrderItemShopping",
   "name" : "OrderItemShopping",
-  "lastUpdate" : 1673882001962,
+  "lastUpdate" : 1673890037007,
   "rows" : [
     [
       {
@@ -805,7 +805,8 @@
         "\t\t\torderStatus: \"AVAILABLE\",",
         "\t\t\torderCustomer: $data.orderItems.orderCustomer ? {",
         "\t\t\t\tpersistenceId_string: $data.orderItems.orderCustomer.persistenceId_string !== undefined ? $data.orderItems.orderCustomer.persistenceId_string : null",
-        "\t\t\t} : null",
+        "\t\t\t} : null,",
+        "\t\t\torderTotal: $data.orderItems.orderTotal !== undefined ? $data.orderItems.orderTotal : null",
         "\t\t}",
         "\t}",
         "}"
