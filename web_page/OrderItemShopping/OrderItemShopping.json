@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "OrderItemShopping",
   "name" : "OrderItemShopping",
-  "lastUpdate" : 1673890037007,
+  "lastUpdate" : 1674230837219,
   "rows" : [
     [
       {
@@ -781,20 +781,12 @@
       ],
       "exposed" : false
     },
-    "orderItems_orderCustomer" : {
-      "type" : "url",
-      "value" : [
-        "{{orderItems|lazyRef:'orderCustomer'}}"
-      ],
-      "exposed" : false
-    },
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "if( $data.orderItems && $data.orderItems_orderItems && $data.orderItems_orderCustomer ){",
+        "if( $data.orderItems && $data.orderItems_orderItems ){",
         "\t//attach lazy references variables to parent variables",
         "\t$data.orderItems.orderItems = $data.orderItems_orderItems;",
-        "\t$data.orderItems.orderCustomer = $data.orderItems_orderCustomer;",
         "\treturn {",
         "\t\t//map orderItems variable to expected task contract input",
         "\t\torderItemsInput: {",
@@ -806,7 +798,8 @@
         "\t\t\torderCustomer: $data.orderItems.orderCustomer ? {",
         "\t\t\t\tpersistenceId_string: $data.orderItems.orderCustomer.persistenceId_string !== undefined ? $data.orderItems.orderCustomer.persistenceId_string : null",
         "\t\t\t} : null,",
-        "\t\t\torderTotal: $data.orderItems.orderTotal !== undefined ? $data.orderItems.orderTotal : null",
+        "\t\t\torderTotal: $data.orderItems.orderTotal !== undefined ? $data.orderItems.orderTotal : null,",
+        "\t\t\tcustomerId: $data.orderItems.customerId",
         "\t\t}",
         "\t}",
         "}"

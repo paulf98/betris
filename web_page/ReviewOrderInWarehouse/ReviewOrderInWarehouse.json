@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "ReviewOrderInWarehouse",
   "name" : "ReviewOrderInWarehouse",
-  "lastUpdate" : 1673889845711,
+  "lastUpdate" : 1674230008688,
   "rows" : [
     [
       {
@@ -975,499 +975,6 @@
                       "id" : "pbInput",
                       "description" : ""
                     }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "level" : {
-                          "type" : "constant",
-                          "value" : "Level 4"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "Order Customer"
-                        },
-                        "alignment" : {
-                          "type" : "constant",
-                          "value" : "left"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        }
-                      },
-                      "reference" : "31f63d29-bf60-44e8-a292-468620c0a639",
-                      "hasValidationError" : false,
-                      "id" : "pbTitle",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "container",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "repeatedCollection" : {
-                          "type" : "variable"
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        }
-                      },
-                      "reference" : "24699d78-3a54-4839-82c8-af76b1f1f7f9",
-                      "hasValidationError" : false,
-                      "id" : "pbContainer",
-                      "rows" : [
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "md" : 12,
-                              "sm" : 12,
-                              "xs" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "hidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "labelPosition" : {
-                                "type" : "constant",
-                                "value" : "top"
-                              },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "availableValues" : {
-                                "type" : "expression",
-                                "value" : "customer_query"
-                              },
-                              "labelWidth" : {
-                                "type" : "constant",
-                                "value" : 1
-                              },
-                              "label" : {
-                                "type" : "interpolation",
-                                "value" : "Order Customer"
-                              },
-                              "placeholder" : {
-                                "type" : "constant",
-                                "value" : "Select a Order Customer"
-                              },
-                              "dimension" : {
-                                "type" : "constant",
-                                "value" : 12
-                              },
-                              "value" : {
-                                "type" : "variable",
-                                "value" : "orderItems_orderCustomer"
-                              },
-                              "required" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "disabled" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "allowHTML" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "displayedKey" : {
-                                "type" : "constant",
-                                "value" : "customerName"
-                              },
-                              "returnedKey" : {
-                                "type" : "constant"
-                              }
-                            },
-                            "reference" : "2ce7ff52-d6e8-4d67-a16e-036f157ec934",
-                            "hasValidationError" : false,
-                            "id" : "pbSelect",
-                            "description" : ""
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "md" : 12,
-                              "sm" : 12,
-                              "xs" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "allowHtml" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "hidden" : {
-                                "type" : "expression",
-                                "value" : "!orderItems_orderCustomer.customerFirstName"
-                              },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "label" : {
-                                "type" : "interpolation",
-                                "value" : "Customer First Name"
-                              },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{orderItems_orderCustomer.customerFirstName}}"
-                              },
-                              "alignment" : {
-                                "type" : "constant",
-                                "value" : "left"
-                              },
-                              "dimension" : {
-                                "type" : "constant",
-                                "value" : 12
-                              }
-                            },
-                            "reference" : "e8bac706-e670-494f-96ea-3b4fb001875b",
-                            "hasValidationError" : false,
-                            "id" : "pbText",
-                            "description" : ""
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "md" : 12,
-                              "sm" : 12,
-                              "xs" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "allowHtml" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "hidden" : {
-                                "type" : "expression",
-                                "value" : "!orderItems_orderCustomer.customerLastName"
-                              },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "label" : {
-                                "type" : "interpolation",
-                                "value" : "Customer Last Name"
-                              },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{orderItems_orderCustomer.customerLastName}}"
-                              },
-                              "alignment" : {
-                                "type" : "constant",
-                                "value" : "left"
-                              },
-                              "dimension" : {
-                                "type" : "constant",
-                                "value" : 12
-                              }
-                            },
-                            "reference" : "9f392469-23d5-4042-94a0-7ae8d09472ce",
-                            "hasValidationError" : false,
-                            "id" : "pbText",
-                            "description" : ""
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "md" : 12,
-                              "sm" : 12,
-                              "xs" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "allowHtml" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "hidden" : {
-                                "type" : "expression",
-                                "value" : "!orderItems_orderCustomer.customerCountry"
-                              },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "label" : {
-                                "type" : "interpolation",
-                                "value" : "Customer Country"
-                              },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{orderItems_orderCustomer.customerCountry}}"
-                              },
-                              "alignment" : {
-                                "type" : "constant",
-                                "value" : "left"
-                              },
-                              "dimension" : {
-                                "type" : "constant",
-                                "value" : 12
-                              }
-                            },
-                            "reference" : "3f4efccd-6764-43ee-b4c1-4a0f7385a296",
-                            "hasValidationError" : false,
-                            "id" : "pbText",
-                            "description" : ""
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "md" : 12,
-                              "sm" : 12,
-                              "xs" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "allowHtml" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "hidden" : {
-                                "type" : "expression",
-                                "value" : "!orderItems_orderCustomer.customerPostalCode"
-                              },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "label" : {
-                                "type" : "interpolation",
-                                "value" : "Customer Postal Code"
-                              },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{orderItems_orderCustomer.customerPostalCode}}"
-                              },
-                              "alignment" : {
-                                "type" : "constant",
-                                "value" : "left"
-                              },
-                              "dimension" : {
-                                "type" : "constant",
-                                "value" : 12
-                              }
-                            },
-                            "reference" : "4c0346f1-e93c-48c1-9aa5-afd2bba8f5e6",
-                            "hasValidationError" : false,
-                            "id" : "pbText",
-                            "description" : ""
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "md" : 12,
-                              "sm" : 12,
-                              "xs" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "allowHtml" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "hidden" : {
-                                "type" : "expression",
-                                "value" : "!orderItems_orderCustomer.customerCity"
-                              },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "label" : {
-                                "type" : "interpolation",
-                                "value" : "Customer City"
-                              },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{orderItems_orderCustomer.customerCity}}"
-                              },
-                              "alignment" : {
-                                "type" : "constant",
-                                "value" : "left"
-                              },
-                              "dimension" : {
-                                "type" : "constant",
-                                "value" : 12
-                              }
-                            },
-                            "reference" : "6736d639-fbe3-40f9-9236-d8885d836262",
-                            "hasValidationError" : false,
-                            "id" : "pbText",
-                            "description" : ""
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "md" : 12,
-                              "sm" : 12,
-                              "xs" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "allowHtml" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "hidden" : {
-                                "type" : "expression",
-                                "value" : "!orderItems_orderCustomer.customerStreet"
-                              },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "label" : {
-                                "type" : "interpolation",
-                                "value" : "Customer Street"
-                              },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{orderItems_orderCustomer.customerStreet}}"
-                              },
-                              "alignment" : {
-                                "type" : "constant",
-                                "value" : "left"
-                              },
-                              "dimension" : {
-                                "type" : "constant",
-                                "value" : 12
-                              }
-                            },
-                            "reference" : "6f9d53ce-454a-49d9-bf7f-ec71d85bd86f",
-                            "hasValidationError" : false,
-                            "id" : "pbText",
-                            "description" : ""
-                          }
-                        ],
-                        [
-                          {
-                            "type" : "component",
-                            "dimension" : {
-                              "md" : 12,
-                              "sm" : 12,
-                              "xs" : 12,
-                              "lg" : 12
-                            },
-                            "propertyValues" : {
-                              "allowHtml" : {
-                                "type" : "constant",
-                                "value" : true
-                              },
-                              "labelHidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "hidden" : {
-                                "type" : "expression",
-                                "value" : "!orderItems_orderCustomer.customerHouseNumber"
-                              },
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "label" : {
-                                "type" : "interpolation",
-                                "value" : "Customer House Number"
-                              },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{orderItems_orderCustomer.customerHouseNumber}}"
-                              },
-                              "alignment" : {
-                                "type" : "constant",
-                                "value" : "left"
-                              },
-                              "dimension" : {
-                                "type" : "constant",
-                                "value" : 12
-                              }
-                            },
-                            "reference" : "f05693fb-a6c3-4bd0-8699-ac6744703728",
-                            "hasValidationError" : false,
-                            "id" : "pbText",
-                            "description" : ""
-                          }
-                        ]
-                      ]
-                    }
                   ]
                 ]
               }
@@ -1770,20 +1277,12 @@
       ],
       "exposed" : false
     },
-    "orderItems_orderCustomer" : {
-      "type" : "url",
-      "value" : [
-        "{{orderItems|lazyRef:'orderCustomer'}}"
-      ],
-      "exposed" : false
-    },
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "if( $data.orderItems && $data.orderItems_orderItems && $data.orderItems_orderCustomer ){",
+        "if( $data.orderItems && $data.orderItems_orderItems){",
         "\t//attach lazy references variables to parent variables",
         "\t$data.orderItems.orderItems = $data.orderItems_orderItems;",
-        "\t$data.orderItems.orderCustomer = $data.orderItems_orderCustomer;",
         "\treturn {",
         "\t\t//map orderItems variable to expected task contract input",
         "\t\torderItemsInput: {",
@@ -1792,10 +1291,8 @@
         "\t\t\t})),",
         "\t\t\torderDate: $data.orderItems.orderDate !== undefined ? $data.orderItems.orderDate : null,",
         "\t\t\torderStatus: \"AVAILABLE\",",
-        "\t\t\torderCustomer: $data.orderItems.orderCustomer ? {",
-        "\t\t\t\tpersistenceId_string: $data.orderItems.orderCustomer.persistenceId_string !== undefined ? $data.orderItems.orderCustomer.persistenceId_string : null",
-        "\t\t\t} : null,",
-        "\t\t\torderTotal: $data.orderItems.orderTotal !== undefined ? $data.orderItems.orderTotal : null",
+        "\t\t\torderTotal: $data.orderItems.orderTotal !== undefined ? $data.orderItems.orderTotal : null,",
+        "\t\t\tcustomerId: $data.orderItems.customerId",
         "\t\t}",
         "\t}",
         "}"
@@ -1830,20 +1327,12 @@
       ],
       "exposed" : false
     },
-    "customer_query" : {
-      "type" : "url",
-      "value" : [
-        "../API/bdm/businessData/com.company.model.Customer?q=find&p=0&c=99"
-      ],
-      "exposed" : false
-    },
     "formOutput_unavailable" : {
       "type" : "expression",
       "value" : [
-        "if( $data.orderItems && $data.orderItems_orderItems && $data.orderItems_orderCustomer ){",
+        "if( $data.orderItems && $data.orderItems_orderItems ){",
         "\t//attach lazy references variables to parent variables",
         "\t$data.orderItems.orderItems = $data.orderItems_orderItems;",
-        "\t$data.orderItems.orderCustomer = $data.orderItems_orderCustomer;",
         "\treturn {",
         "\t\t//map orderItems variable to expected task contract input",
         "\t\torderItemsInput: {",
@@ -1855,7 +1344,8 @@
         "\t\t\torderCustomer: $data.orderItems.orderCustomer ? {",
         "\t\t\t\tpersistenceId_string: $data.orderItems.orderCustomer.persistenceId_string !== undefined ? $data.orderItems.orderCustomer.persistenceId_string : null",
         "\t\t\t} : null,",
-        "\t\t\torderTotal: $data.orderItems.orderTotal !== undefined ? $data.orderItems.orderTotal : null",
+        "\t\t\torderTotal: $data.orderItems.orderTotal !== undefined ? $data.orderItems.orderTotal : null,",
+        "\t\t\tcustomerId: $data.orderItems.customerId",
         "\t\t}",
         "\t}",
         "}"

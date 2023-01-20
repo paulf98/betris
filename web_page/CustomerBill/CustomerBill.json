@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "CustomerBill",
   "name" : "CustomerBill",
-  "lastUpdate" : 1673891483585,
+  "lastUpdate" : 1674231453269,
   "rows" : [
     [
       {
@@ -543,6 +543,18 @@
                               "dimension" : {
                                 "type" : "constant",
                                 "value" : 12
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
                               }
                             },
                             "reference" : "51e78082-81cd-471f-8395-8a6a10c3173b",
@@ -690,8 +702,8 @@
                                       "value" : false
                                     },
                                     "hidden" : {
-                                      "type" : "expression",
-                                      "value" : "!orderBill_orderItems_orderCustomer.customerName"
+                                      "type" : "constant",
+                                      "value" : false
                                     },
                                     "cssClasses" : {
                                       "type" : "constant",
@@ -703,7 +715,7 @@
                                     },
                                     "text" : {
                                       "type" : "interpolation",
-                                      "value" : "{{orderBill_orderItems_orderCustomer.customerName}}"
+                                      "value" : "{{user_name_data.firstname + \" \" + user_name_data.lastname }}"
                                     },
                                     "alignment" : {
                                       "type" : "constant",
@@ -712,6 +724,18 @@
                                     "dimension" : {
                                       "type" : "constant",
                                       "value" : 12
+                                    },
+                                    "allowHTML" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
                                     }
                                   },
                                   "reference" : "af45803b-7fb9-47c1-ba62-547922c6e8f6",
@@ -739,8 +763,8 @@
                                       "value" : false
                                     },
                                     "hidden" : {
-                                      "type" : "expression",
-                                      "value" : "!orderBill_orderItems_orderCustomer.customerCountry"
+                                      "type" : "constant",
+                                      "value" : false
                                     },
                                     "cssClasses" : {
                                       "type" : "constant",
@@ -752,7 +776,7 @@
                                     },
                                     "text" : {
                                       "type" : "interpolation",
-                                      "value" : "{{orderBill_orderItems_orderCustomer.customerCountry}}"
+                                      "value" : "{{user_contact.country}}"
                                     },
                                     "alignment" : {
                                       "type" : "constant",
@@ -761,6 +785,18 @@
                                     "dimension" : {
                                       "type" : "constant",
                                       "value" : 12
+                                    },
+                                    "allowHTML" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
                                     }
                                   },
                                   "reference" : "3632a60f-fdb8-495b-a5a4-a179e8516f80",
@@ -788,8 +824,8 @@
                                       "value" : false
                                     },
                                     "hidden" : {
-                                      "type" : "expression",
-                                      "value" : "!orderBill_orderItems_orderCustomer.customerPostalCode"
+                                      "type" : "constant",
+                                      "value" : false
                                     },
                                     "cssClasses" : {
                                       "type" : "constant",
@@ -797,11 +833,11 @@
                                     },
                                     "label" : {
                                       "type" : "interpolation",
-                                      "value" : "Customer Postal Code"
+                                      "value" : "Postal Code"
                                     },
                                     "text" : {
                                       "type" : "interpolation",
-                                      "value" : "{{orderBill_orderItems_orderCustomer.customerPostalCode}}"
+                                      "value" : "{{user_contact.zipcode}}"
                                     },
                                     "alignment" : {
                                       "type" : "constant",
@@ -810,6 +846,18 @@
                                     "dimension" : {
                                       "type" : "constant",
                                       "value" : 12
+                                    },
+                                    "allowHTML" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
                                     }
                                   },
                                   "reference" : "903190f5-71cd-40b0-8eea-8c555ba9c190",
@@ -837,8 +885,8 @@
                                       "value" : false
                                     },
                                     "hidden" : {
-                                      "type" : "expression",
-                                      "value" : "!orderBill_orderItems_orderCustomer.customerCity"
+                                      "type" : "constant",
+                                      "value" : false
                                     },
                                     "cssClasses" : {
                                       "type" : "constant",
@@ -846,11 +894,11 @@
                                     },
                                     "label" : {
                                       "type" : "interpolation",
-                                      "value" : "Customer City"
+                                      "value" : "City"
                                     },
                                     "text" : {
                                       "type" : "interpolation",
-                                      "value" : "{{orderBill_orderItems_orderCustomer.customerCity}}"
+                                      "value" : "{{user_contact.city}}"
                                     },
                                     "alignment" : {
                                       "type" : "constant",
@@ -859,6 +907,18 @@
                                     "dimension" : {
                                       "type" : "constant",
                                       "value" : 12
+                                    },
+                                    "allowHTML" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
                                     }
                                   },
                                   "reference" : "91e7a574-08eb-46ca-a636-f9e8e4578b73",
@@ -886,69 +946,20 @@
                                       "value" : false
                                     },
                                     "hidden" : {
-                                      "type" : "expression",
-                                      "value" : "!orderBill_orderItems_orderCustomer.customerStreet"
-                                    },
-                                    "cssClasses" : {
-                                      "type" : "constant",
-                                      "value" : ""
-                                    },
-                                    "label" : {
-                                      "type" : "interpolation",
-                                      "value" : "Customer Street"
-                                    },
-                                    "text" : {
-                                      "type" : "interpolation",
-                                      "value" : "{{orderBill_orderItems_orderCustomer.customerStreet}}"
-                                    },
-                                    "alignment" : {
-                                      "type" : "constant",
-                                      "value" : "left"
-                                    },
-                                    "dimension" : {
-                                      "type" : "constant",
-                                      "value" : 12
-                                    }
-                                  },
-                                  "reference" : "666a8947-e677-4241-8943-bbdbc45245b0",
-                                  "hasValidationError" : false,
-                                  "id" : "pbText",
-                                  "description" : ""
-                                }
-                              ],
-                              [
-                                {
-                                  "type" : "component",
-                                  "dimension" : {
-                                    "md" : 12,
-                                    "sm" : 12,
-                                    "xs" : 12,
-                                    "lg" : 12
-                                  },
-                                  "propertyValues" : {
-                                    "allowHtml" : {
-                                      "type" : "constant",
-                                      "value" : true
-                                    },
-                                    "labelHidden" : {
                                       "type" : "constant",
                                       "value" : false
                                     },
-                                    "hidden" : {
-                                      "type" : "expression",
-                                      "value" : "!orderBill_orderItems_orderCustomer.customerHouseNumber"
-                                    },
                                     "cssClasses" : {
                                       "type" : "constant",
                                       "value" : ""
                                     },
                                     "label" : {
                                       "type" : "interpolation",
-                                      "value" : "Customer House Number"
+                                      "value" : "Address"
                                     },
                                     "text" : {
                                       "type" : "interpolation",
-                                      "value" : "{{orderBill_orderItems_orderCustomer.customerHouseNumber}}"
+                                      "value" : "{{user_contact.address}}"
                                     },
                                     "alignment" : {
                                       "type" : "constant",
@@ -957,9 +968,21 @@
                                     "dimension" : {
                                       "type" : "constant",
                                       "value" : 12
+                                    },
+                                    "allowHTML" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
                                     }
                                   },
-                                  "reference" : "0f54646c-790d-40a3-b2ec-40d6d0e56590",
+                                  "reference" : "666a8947-e677-4241-8943-bbdbc45245b0",
                                   "hasValidationError" : false,
                                   "id" : "pbText",
                                   "description" : ""
@@ -1180,6 +1203,14 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
                   }
                 },
                 "reference" : "e7af10c5-ce37-4844-81e8-de56b23b7cd2",
@@ -1215,13 +1246,6 @@
       "type" : "url",
       "value" : [
         "{{orderBill_orderItems|lazyRef:'orderItems'}}"
-      ],
-      "exposed" : false
-    },
-    "orderBill_orderItems_orderCustomer" : {
-      "type" : "url",
-      "value" : [
-        "{{orderBill_orderItems|lazyRef:'orderCustomer'}}"
       ],
       "exposed" : false
     },
@@ -1264,11 +1288,10 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "if( $data.orderBill && $data.orderBill_orderItems && $data.orderBill_orderItems_orderItems && $data.orderBill_orderItems_orderCustomer ){",
+        "if( $data.orderBill && $data.orderBill_orderItems && $data.orderBill_orderItems_orderItems ){",
         "\t//attach lazy references variables to parent variables",
         "\t$data.orderBill.orderItems = $data.orderBill_orderItems;",
         "\t$data.orderBill.orderItems.orderItems = $data.orderBill_orderItems_orderItems;",
-        "\t$data.orderBill.orderItems.orderCustomer = $data.orderBill_orderItems_orderCustomer;",
         "\treturn {",
         "\t\t//map orderBill variable to expected task contract input",
         "\t\torderBillInput: {",
@@ -1300,6 +1323,27 @@
       "type" : "urlparameter",
       "value" : [
         "id"
+      ],
+      "exposed" : false
+    },
+    "user_contact" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/personalcontactdata/{{orderBill_orderItems.customerId}}"
+      ],
+      "exposed" : false
+    },
+    "user_name_data" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/user/{{orderBill_orderItems.customerId}}"
+      ],
+      "exposed" : false
+    },
+    "test" : {
+      "type" : "expression",
+      "value" : [
+        "console.log($data)"
       ],
       "exposed" : false
     }
