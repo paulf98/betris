@@ -54,7 +54,18 @@
     <user userName="admin">
       <firstName>Adam</firstName>
       <lastName>Administrator</lastName>
-      <personalData/>
+      <personalData>
+        <email>adam@shop.com</email>
+        <phoneNumber>13456789</phoneNumber>
+        <mobileNumber>123456789</mobileNumber>
+        <building>A</building>
+        <room>4</room>
+        <address>Musterstraße 123</address>
+        <zipCode>123456</zipCode>
+        <city>Musterstadt</city>
+        <state>RLP</state>
+        <country>DE</country>
+      </personalData>
       <professionalData/>
       <password encrypted="false">bpm</password>
       <customUserInfoValues/>
