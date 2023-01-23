@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "ReviewOrderCustomer",
   "name" : "ReviewOrderCustomer",
-  "lastUpdate" : 1674229248968,
+  "lastUpdate" : 1674484728167,
   "rows" : [
     [
       {
@@ -113,7 +113,16 @@
         "dimension" : {
           "xs" : 12
         },
-        "propertyValues" : { },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          }
+        },
         "reference" : "175d9835-96cc-4827-8d65-3801b33eaf99",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
@@ -1056,10 +1065,10 @@
               {
                 "type" : "component",
                 "dimension" : {
-                  "md" : 12,
+                  "md" : 6,
                   "sm" : 12,
                   "xs" : 12,
-                  "lg" : 12
+                  "lg" : 6
                 },
                 "propertyValues" : {
                   "removeItem" : {
@@ -1152,6 +1161,98 @@
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
+              },
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 6,
+                  "lg" : 6
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "disabled" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Cancel Order"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "center"
+                  },
+                  "buttonStyle" : {
+                    "type" : "constant",
+                    "value" : "danger"
+                  },
+                  "action" : {
+                    "type" : "constant",
+                    "value" : "Submit task"
+                  },
+                  "assign" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "responseStatusCode" : {
+                    "type" : "variable"
+                  },
+                  "dataToSend" : {
+                    "type" : "expression",
+                    "value" : "formOutputCancel"
+                  },
+                  "dataFromSuccess" : {
+                    "type" : "variable"
+                  },
+                  "closeOnSuccess" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "dataFromError" : {
+                    "type" : "variable",
+                    "value" : "formOutput._submitError"
+                  },
+                  "targetUrlOnSuccess" : {
+                    "type" : "interpolation",
+                    "value" : "/bonita"
+                  },
+                  "collectionToModify" : {
+                    "type" : "variable"
+                  },
+                  "modalId" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "collectionPosition" : {
+                    "type" : "constant",
+                    "value" : "Last"
+                  },
+                  "valueToAdd" : {
+                    "type" : "constant"
+                  },
+                  "removeItem" : {
+                    "type" : "variable"
+                  }
+                },
+                "reference" : "8e5b79ee-71b6-4eb0-b31b-7e5cca3d50ab",
+                "hasValidationError" : false,
+                "id" : "pbButton"
               }
             ],
             [
@@ -1336,6 +1437,30 @@
       "type" : "url",
       "value" : [
         "../API/identity/user/{{order.customerId}}"
+      ],
+      "exposed" : false
+    },
+    "formOutputCancel" : {
+      "type" : "expression",
+      "value" : [
+        "console.log(\"first\", $data)",
+        "if( $data.order && $data.order_orderItems){",
+        "\t//attach lazy references variables to parent variables",
+        "\t$data.order.orderItems = $data.order_orderItems;",
+        "\tconsole.log(\"second\", $data)",
+        "\treturn {",
+        "\t\t//map order variable to expected task contract input",
+        "\t\torderInput: {",
+        "\t\t\torderItems: $data.order.orderItems.map( it => ({",
+        "\t\t\t\tpersistenceId_string: it.persistenceId_string !== undefined ? it.persistenceId_string : null",
+        "\t\t\t})),",
+        "\t\t\torderDate: $data.order.orderDate !== undefined ? $data.order.orderDate : null,",
+        "\t\t\torderStatus: \"CANCELED\",",
+        "\t\t\torderTotal: $data.orderTotal,",
+        "\t\t\tcustomerId: $data.order.customerId",
+        "\t\t}",
+        "\t}",
+        "}"
       ],
       "exposed" : false
     }

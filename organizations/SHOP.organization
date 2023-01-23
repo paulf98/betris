@@ -5,7 +5,12 @@
     <user userName="carl">
       <firstName>Carl</firstName>
       <lastName>Customer</lastName>
-      <personalData/>
+      <personalData>
+        <address>Musterstraße 15</address>
+        <zipCode>346345</zipCode>
+        <city>Berlin</city>
+        <country>Deutschland</country>
+      </personalData>
       <professionalData/>
       <password encrypted="false">123</password>
       <customUserInfoValues/>
