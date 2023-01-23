@@ -129,7 +129,9 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_cb8ukJAOEe2xxdA9tL88Dg" name="Reviewed" target="_GlgqQI6vEe2xxdA9tL88Dg" source="_0UeNw46sEe2xxdA9tL88Dg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_ccF4gJAOEe2xxdA9tL88Dg"/>
-        <condition xmi:type="expression:Expression" xmi:id="_ccGfkJAOEe2xxdA9tL88Dg" name="newScript()" content="item.itemReviewed == true" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_ccGfkJAOEe2xxdA9tL88Dg" name="newScript()" content="if (item.itemReviewed == true)&#xD;&#xA;&#x9;return true&#xD;&#xA;return false" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_173-4JstEe224NMJAQJm1w" name="item" dataType="_0Ue0946sEe2xxdA9tL88Dg" className="com.company.model.Item"/>
+        </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_sYUusJTPEe2ahJTHTeqksQ" name="Not marked as reviewed" target="_0UeNw46sEe2xxdA9tL88Dg" source="_0UeNw46sEe2xxdA9tL88Dg" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_sYYZEJTPEe2ahJTHTeqksQ"/>
