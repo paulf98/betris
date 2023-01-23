@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
   <process:MainProcess xmi:id="_5k7I4IaXEe2WY_GAK9s2hw" name="Online-Shop" bonitaModelVersion="7.12.0-004">
     <elements xmi:type="process:Pool" xmi:id="_5k8XAIaXEe2WY_GAK9s2hw" name="Customer">
       <elements xmi:type="process:Lane" xmi:id="_5k8XAYaXEe2WY_GAK9s2hw" name="Customer lane" actor="_ycU_QIjsEe2WY_GAK9s2hw">
@@ -8,7 +8,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_5k8-EIaXEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_5k8-EYaXEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_oJCxkIjsEe2WY_GAK9s2hw" name="Review Order" outgoing="_4lXLQJEJEe2vw_080mFBEg" incoming="_GVIi8JjWEe2gRN2eMUcfIA" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_oJCxkIjsEe2WY_GAK9s2hw" name="Review Order" outgoing="_4lXLQJEJEe2vw_080mFBEg" incoming="_GVIi8JjWEe2gRN2eMUcfIA" actor="_ycU_QIjsEe2WY_GAK9s2hw">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_oJGb8IjsEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_oJF04IjsEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_oJGb8YjsEe2WY_GAK9s2hw" name="" content="" returnTypeFixed="true"/>
@@ -76,6 +76,15 @@
           <formMapping xmi:type="process:FormMapping" xmi:id="_oJGb-IjsEe2WY_GAK9s2hw">
             <targetForm xmi:type="expression:Expression" xmi:id="_-IaC8JTAEe2ahJTHTeqksQ" name="ReviewOrderCustomer" content="4d50212a-f1ae-4e81-a98c-c3b6d9db696a" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
+          <filters xmi:type="process:ActorFilter" xmi:id="_4xedkJsuEe224NMJAQJm1w" name="user" definitionId="bonita-actorfilter-single-user" definitionVersion="1.0.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_4xedkZsuEe224NMJAQJm1w" definitionId="bonita-actorfilter-single-user" version="1.0.0">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_4xedkpsuEe224NMJAQJm1w" key="userId">
+                <expression xmi:type="expression:Expression" xmi:id="_4xedk5suEe224NMJAQJm1w" name="userId()" content="order.customerId" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_4xedlJsuEe224NMJAQJm1w" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+                </expression>
+              </parameters>
+            </configuration>
+          </filters>
           <contract xmi:type="process:Contract" xmi:id="_oJGb94jsEe2WY_GAK9s2hw">
             <inputs xmi:type="process:ContractInput" xmi:id="_8GbkIJTAEe2ahJTHTeqksQ" name="orderInput" type="COMPLEX" createMode="false">
               <inputs xmi:type="process:ContractInput" xmi:id="_8GcLMJTAEe2ahJTHTeqksQ" name="orderItems" type="COMPLEX" multiple="true" createMode="false">
@@ -179,6 +188,15 @@
           <formMapping xmi:type="process:FormMapping" xmi:id="_tahVOZXEEe2_0s1-Kw3qlQ">
             <targetForm xmi:type="expression:Expression" xmi:id="_wCGbcJXEEe2_0s1-Kw3qlQ" name="CustomerBill" content="069b0950-7cff-48c7-af3c-54e93a66d48e" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
+          <filters xmi:type="process:ActorFilter" xmi:id="_SepmYJsvEe224NMJAQJm1w" name="user" definitionId="bonita-actorfilter-single-user" definitionVersion="1.0.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_SepmYZsvEe224NMJAQJm1w" definitionId="bonita-actorfilter-single-user" version="1.0.0">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_SepmYpsvEe224NMJAQJm1w" key="userId">
+                <expression xmi:type="expression:Expression" xmi:id="_SepmY5svEe224NMJAQJm1w" name="userId()" content="order.customerId" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SepmZJsvEe224NMJAQJm1w" name="order" dataType="_5k8-P4aXEe2WY_GAK9s2hw" className="com.company.model.OrderItems"/>
+                </expression>
+              </parameters>
+            </configuration>
+          </filters>
           <contract xmi:type="process:Contract" xmi:id="_tahVOJXEEe2_0s1-Kw3qlQ">
             <inputs xmi:type="process:ContractInput" xmi:id="_vNaPIJXEEe2_0s1-Kw3qlQ" name="orderBillInput" type="COMPLEX" dataReference="orderBill" createMode="false">
               <inputs xmi:type="process:ContractInput" xmi:id="_vNaPIZXEEe2_0s1-Kw3qlQ" name="orderItems" type="COMPLEX" createMode="false">
@@ -523,7 +541,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_Fbo1gZGLEe2vw_080mFBEg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_8Z1tD5EKEe2vw_080mFBEg">
-        <targetForm xmi:type="expression:Expression" xmi:id="_qJzJ4JsrEe224NMJAQJm1w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_8LcqEJsuEe224NMJAQJm1w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_8Z1tEZEKEe2vw_080mFBEg">
         <targetForm xmi:type="expression:Expression" xmi:id="_8Z1tEpEKEe2vw_080mFBEg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -706,7 +724,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_12DNgZW4Ee2_0s1-Kw3qlQ" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_I-hST5KPEe2Mw6a3EPV1PQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_p9SX4JsrEe224NMJAQJm1w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_7-dW8JsuEe224NMJAQJm1w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_I-hSUZKPEe2Mw6a3EPV1PQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_I-hSUpKPEe2Mw6a3EPV1PQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -882,7 +900,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_7UrZMZMiEe2ahJTHTeqksQ" content=""/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_3kfXAJMgEe2ahJTHTeqksQ">
-        <targetForm xmi:type="expression:Expression" xmi:id="_qHKFkJsrEe224NMJAQJm1w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_8IsRAJsuEe224NMJAQJm1w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_3kf-EZMgEe2ahJTHTeqksQ">
         <targetForm xmi:type="expression:Expression" xmi:id="_3kf-EpMgEe2ahJTHTeqksQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -1018,7 +1036,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_T9BNYZslEe224NMJAQJm1w" content=""/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_YvmBD5skEe224NMJAQJm1w">
-        <targetForm xmi:type="expression:Expression" xmi:id="_qEtOgJsrEe224NMJAQJm1w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_8GPZ8JsuEe224NMJAQJm1w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_YvmBEZskEe224NMJAQJm1w">
         <targetForm xmi:type="expression:Expression" xmi:id="_YvmBEpskEe224NMJAQJm1w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
