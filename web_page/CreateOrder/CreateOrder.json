@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "CreateOrder",
   "name" : "CreateOrder",
-  "lastUpdate" : 1674228627717,
+  "lastUpdate" : 1674485850121,
   "rows" : [
     [
       {
@@ -894,9 +894,9 @@
       "exposed" : false
     },
     "item_query" : {
-      "type" : "url",
+      "type" : "businessdata",
       "value" : [
-        "../API/bdm/businessData/com.company.model.Item?q=find&p=0&c=99"
+        "{\"displayValue\":\"findByItemReviewed [com.company.model.Item]\",\"businessObjectName\":\"Item\",\"query\":{\"name\":\"findByItemReviewed\",\"displayName\":\"findByItemReviewed\"},\"id\":\"com.company.model.Item\",\"filters\":[{\"name\":\"itemReviewed\",\"type\":\"BOOLEAN\",\"collection\":false,\"value\":\"true\"}],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
       ],
       "exposed" : false
     },
