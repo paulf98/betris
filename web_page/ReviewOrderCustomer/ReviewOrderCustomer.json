@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "ReviewOrderCustomer",
   "name" : "ReviewOrderCustomer",
-  "lastUpdate" : 1674484728167,
+  "lastUpdate" : 1674487424595,
   "rows" : [
     [
       {
@@ -1362,11 +1362,9 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "console.log(\"first\", $data)",
         "if( $data.order && $data.order_orderItems){",
         "\t//attach lazy references variables to parent variables",
         "\t$data.order.orderItems = $data.order_orderItems;",
-        "\tconsole.log(\"second\", $data)",
         "\treturn {",
         "\t\t//map order variable to expected task contract input",
         "\t\torderInput: {",
@@ -1384,9 +1382,9 @@
       "exposed" : false
     },
     "item_query" : {
-      "type" : "url",
+      "type" : "businessdata",
       "value" : [
-        "../API/bdm/businessData/com.company.model.Item?q=find&p=0&c=99"
+        "{\"displayValue\":\"findByItemReviewed [com.company.model.Item]\",\"businessObjectName\":\"Item\",\"query\":{\"name\":\"findByItemReviewed\",\"displayName\":\"findByItemReviewed\"},\"id\":\"com.company.model.Item\",\"filters\":[{\"name\":\"itemReviewed\",\"type\":\"BOOLEAN\",\"collection\":false,\"value\":\"true\"}],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
       ],
       "exposed" : false
     },
@@ -1443,11 +1441,9 @@
     "formOutputCancel" : {
       "type" : "expression",
       "value" : [
-        "console.log(\"first\", $data)",
         "if( $data.order && $data.order_orderItems){",
         "\t//attach lazy references variables to parent variables",
         "\t$data.order.orderItems = $data.order_orderItems;",
-        "\tconsole.log(\"second\", $data)",
         "\treturn {",
         "\t\t//map order variable to expected task contract input",
         "\t\torderInput: {",
