@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "ReviewOrderCustomer",
   "name" : "ReviewOrderCustomer",
-  "lastUpdate" : 1674487424595,
+  "lastUpdate" : 1674836908687,
   "rows" : [
     [
       {
@@ -749,8 +749,8 @@
                             "dimension" : {
                               "xs" : 12,
                               "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
+                              "md" : 6,
+                              "lg" : 6
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -761,7 +761,23 @@
                                 "type" : "constant",
                                 "value" : false
                               },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
                               "allowHTML" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "readOnly" : {
                                 "type" : "constant",
                                 "value" : false
                               },
@@ -771,7 +787,7 @@
                               },
                               "label" : {
                                 "type" : "interpolation",
-                                "value" : "Name"
+                                "value" : "Firstname"
                               },
                               "labelPosition" : {
                                 "type" : "constant",
@@ -781,18 +797,110 @@
                                 "type" : "constant",
                                 "value" : 4
                               },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{user_name_data.firstname + \" \" + user_name_data.lastname }}"
+                              "placeholder" : {
+                                "type" : "interpolation"
                               },
-                              "alignment" : {
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "user_name_data.firstname"
+                              },
+                              "type" : {
                                 "type" : "constant",
-                                "value" : "left"
+                                "value" : "text"
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
                               }
                             },
-                            "reference" : "32ed76d2-28a2-4207-953a-ecf664e8d371",
+                            "reference" : "b1d603f2-3000-4c51-a408-156000beaca2",
                             "hasValidationError" : false,
-                            "id" : "pbText"
+                            "id" : "pbInput"
+                          },
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 6,
+                              "lg" : 6
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "readOnly" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Lastname"
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "placeholder" : {
+                                "type" : "interpolation"
+                              },
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "user_name_data.lastname"
+                              },
+                              "type" : {
+                                "type" : "constant",
+                                "value" : "text"
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
+                              }
+                            },
+                            "reference" : "00edfd6e-1c89-4b3a-a258-fe788f72a599",
+                            "hasValidationError" : false,
+                            "id" : "pbInput"
                           }
                         ],
                         [
@@ -813,7 +921,23 @@
                                 "type" : "constant",
                                 "value" : false
                               },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
                               "allowHTML" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "readOnly" : {
                                 "type" : "constant",
                                 "value" : false
                               },
@@ -833,18 +957,31 @@
                                 "type" : "constant",
                                 "value" : 4
                               },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{user_contact.country}}"
+                              "placeholder" : {
+                                "type" : "interpolation"
                               },
-                              "alignment" : {
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "user_contact.country"
+                              },
+                              "type" : {
                                 "type" : "constant",
-                                "value" : "left"
+                                "value" : "text"
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
                               }
                             },
-                            "reference" : "c7db3e08-2308-4166-b835-a34393bebb66",
+                            "reference" : "0d950530-9a9c-4eaa-8506-c82b614301d0",
                             "hasValidationError" : false,
-                            "id" : "pbText"
+                            "id" : "pbInput"
                           }
                         ],
                         [
@@ -865,7 +1002,23 @@
                                 "type" : "constant",
                                 "value" : false
                               },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
                               "allowHTML" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "readOnly" : {
                                 "type" : "constant",
                                 "value" : false
                               },
@@ -885,18 +1038,31 @@
                                 "type" : "constant",
                                 "value" : 4
                               },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{user_contact.zipcode}}"
+                              "placeholder" : {
+                                "type" : "interpolation"
                               },
-                              "alignment" : {
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "user_contact.zipcode"
+                              },
+                              "type" : {
                                 "type" : "constant",
-                                "value" : "left"
+                                "value" : "text"
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
                               }
                             },
-                            "reference" : "98496085-5084-49d8-9b63-531aba8bc583",
+                            "reference" : "0ef18350-0751-4532-ab9f-607d4fb8f095",
                             "hasValidationError" : false,
-                            "id" : "pbText"
+                            "id" : "pbInput"
                           }
                         ],
                         [
@@ -917,7 +1083,23 @@
                                 "type" : "constant",
                                 "value" : false
                               },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
                               "allowHTML" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "readOnly" : {
                                 "type" : "constant",
                                 "value" : false
                               },
@@ -937,18 +1119,31 @@
                                 "type" : "constant",
                                 "value" : 4
                               },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{user_contact.city}}"
+                              "placeholder" : {
+                                "type" : "interpolation"
                               },
-                              "alignment" : {
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "user_contact.city"
+                              },
+                              "type" : {
                                 "type" : "constant",
-                                "value" : "left"
+                                "value" : "text"
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
                               }
                             },
-                            "reference" : "d43b4628-a085-4d24-a17e-3b44b9752c33",
+                            "reference" : "5fd7a1f8-ab4f-4352-bea1-5b4db7b7fecd",
                             "hasValidationError" : false,
-                            "id" : "pbText"
+                            "id" : "pbInput"
                           }
                         ],
                         [
@@ -969,7 +1164,23 @@
                                 "type" : "constant",
                                 "value" : false
                               },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
                               "allowHTML" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "minLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "maxLength" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "readOnly" : {
                                 "type" : "constant",
                                 "value" : false
                               },
@@ -989,18 +1200,31 @@
                                 "type" : "constant",
                                 "value" : 4
                               },
-                              "text" : {
-                                "type" : "interpolation",
-                                "value" : "{{user_contact.address}}"
+                              "placeholder" : {
+                                "type" : "interpolation"
                               },
-                              "alignment" : {
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "user_contact.address"
+                              },
+                              "type" : {
                                 "type" : "constant",
-                                "value" : "left"
+                                "value" : "text"
+                              },
+                              "min" : {
+                                "type" : "constant"
+                              },
+                              "max" : {
+                                "type" : "constant"
+                              },
+                              "step" : {
+                                "type" : "constant",
+                                "value" : 1
                               }
                             },
-                            "reference" : "c7de7693-7e9b-475b-afc7-1dca719d8907",
+                            "reference" : "e8c36c07-8162-445f-8965-4ae6b0d576ab",
                             "hasValidationError" : false,
-                            "id" : "pbText"
+                            "id" : "pbInput"
                           }
                         ]
                       ]
@@ -1363,6 +1587,7 @@
       "type" : "expression",
       "value" : [
         "if( $data.order && $data.order_orderItems){",
+        "",
         "\t//attach lazy references variables to parent variables",
         "\t$data.order.orderItems = $data.order_orderItems;",
         "\treturn {",
@@ -1441,6 +1666,7 @@
     "formOutputCancel" : {
       "type" : "expression",
       "value" : [
+        "",
         "if( $data.order && $data.order_orderItems){",
         "\t//attach lazy references variables to parent variables",
         "\t$data.order.orderItems = $data.order_orderItems;",
